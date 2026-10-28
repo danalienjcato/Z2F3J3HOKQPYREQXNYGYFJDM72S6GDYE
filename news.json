@@ -1,19 +1,128 @@
 {
-  "updated_at": null,
+  "updated_at": "2026-10-28T18:58:49.381237+00:00",
   "sources": {
     "FOMC": {
-      "ok": false,
-      "error": "Awaiting first successful cloud check"
+      "ok": true,
+      "checked_at": "2026-10-28T18:58:49.381237+00:00",
+      "count": 15
     },
     "CPI": {
       "ok": false,
-      "error": "Awaiting first successful cloud check"
+      "checked_at": "2026-10-28T18:58:49.381237+00:00",
+      "error": "No RSS items returned"
     },
     "PPI": {
       "ok": false,
-      "error": "Awaiting first successful cloud check"
+      "checked_at": "2026-10-28T18:58:49.381237+00:00",
+      "error": "No RSS items returned"
     }
   },
-  "items": [],
-  "note": "Cloud monitoring not yet verified. No live data available."
+  "items": [
+    {
+      "category": "FOMC",
+      "title": "Federal Reserve issues FOMC statement",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "published": "2026-10-28T18:00:00+00:00",
+      "summary": "Federal Reserve issues FOMC statement"
+    },
+    {
+      "category": "FOMC",
+      "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
+      "published": "2026-10-13T18:00:00+00:00",
+      "summary": "Minutes of the Board&#39;s discount rate meetings on August 17, September 9, and September 16, 2026"
+    },
+    {
+      "category": "FOMC",
+      "title": "Minutes of the Federal Open Market Committee, September 15-16, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
+      "published": "2026-10-07T18:00:00+00:00",
+      "summary": "Minutes of the Federal Open Market Committee, September 15-16, 2026"
+    },
+    {
+      "category": "FOMC",
+      "title": "Federal Reserve issues FOMC statement",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "published": "2026-09-16T18:00:00+00:00",
+      "summary": "Federal Reserve issues FOMC statement"
+    },
+    {
+      "category": "FOMC",
+      "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the September 15-16 FOMC meeting",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916b.htm",
+      "published": "2026-09-16T18:00:00+00:00",
+      "summary": "Federal Reserve Board and Federal Open Market Committee release economic projections from the September 15-16 FOMC meeting"
+    },
+    {
+      "category": "FOMC",
+      "title": "Minutes of the Board's discount rate meetings on July 20 and July 29, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260825a.htm",
+      "published": "2026-08-25T18:00:00+00:00",
+      "summary": "Minutes of the Board&#39;s discount rate meetings on July 20 and July 29, 2026"
+    },
+    {
+      "category": "FOMC",
+      "title": "Minutes of the Federal Open Market Committee, July 28–29, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260819a.htm",
+      "published": "2026-08-19T18:00:00+00:00",
+      "summary": "Minutes of the Federal Open Market Committee, July 28–29, 2026"
+    },
+    {
+      "category": "FOMC",
+      "title": "Federal Reserve issues FOMC statement",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+      "published": "2026-07-29T18:00:00+00:00",
+      "summary": "Federal Reserve issues FOMC statement"
+    },
+    {
+      "category": "FOMC",
+      "title": "Minutes of the Board's discount rate meetings on June 8 and June 17, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260714a.htm",
+      "published": "2026-07-14T18:00:00+00:00",
+      "summary": "Minutes of the Board&#39;s discount rate meetings on June 8 and June 17, 2026"
+    },
+    {
+      "category": "FOMC",
+      "title": "Federal Reserve announces the leadership and objectives of its task forces to advance the conduct of monetary policy",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260709a.htm",
+      "published": "2026-07-09T19:00:00+00:00",
+      "summary": "Federal Reserve announces the leadership and objectives of its task forces to advance the conduct of monetary policy"
+    },
+    {
+      "category": "FOMC",
+      "title": "Minutes of the Federal Open Market Committee, June 16-17, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260708a.htm",
+      "published": "2026-07-08T18:00:00+00:00",
+      "summary": "Minutes of the Federal Open Market Committee, June 16-17, 2026"
+    },
+    {
+      "category": "FOMC",
+      "title": "Federal Reserve issues FOMC statement",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+      "published": "2026-06-17T18:00:00+00:00",
+      "summary": "Federal Reserve issues FOMC statement"
+    },
+    {
+      "category": "FOMC",
+      "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the June 16-17 FOMC meeting",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617b.htm",
+      "published": "2026-06-17T18:00:00+00:00",
+      "summary": "Federal Reserve Board and Federal Open Market Committee release economic projections from the June 16-17 FOMC meeting"
+    },
+    {
+      "category": "FOMC",
+      "title": "Minutes of the Board's discount rate meeting on April 20 and 29, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260526a.htm",
+      "published": "2026-05-26T18:00:00+00:00",
+      "summary": "Minutes of the Board&#39;s discount rate meeting on April 20 and 29, 2026"
+    },
+    {
+      "category": "FOMC",
+      "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
+      "published": "2026-05-20T18:00:00+00:00",
+      "summary": "Minutes of the Federal Open Market Committee, April 28-29, 2026"
+    }
+  ],
+  "note": "Official release headlines, not instant execution signals. Scheduled checks may be delayed."
 }
