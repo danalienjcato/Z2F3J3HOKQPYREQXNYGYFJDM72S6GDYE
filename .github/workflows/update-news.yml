@@ -34,5 +34,6 @@ jobs:
           git add news.json reactions.json
           if ! git diff --cached --quiet; then
             git commit -m "Update official economic news"
+            git pull --rebase -X ours origin main
             git push
           fi
