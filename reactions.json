@@ -1,7 +1,26 @@
 {
-  "updated_at": "2026-10-28T19:32:08.622094+00:00",
+  "updated_at": "2026-10-28T22:57:14.933296+00:00",
   "method": "Dukascopy BID M1 close-to-close differences from minute preceding scheduled release. CPI/PPI 08:30 New York time; FOMC statement/minutes 14:00 New York time. No intraminute high/low or causality claim.",
   "items": [
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_10152026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand increases 1.3% in September; goods advance 2.6%, services rise 0.8%",
+      "published": "2026-10-15T11:50:51.146000+00:00",
+      "release_time_utc": "2026-10-15T12:30:00+00:00",
+      "baseline": 4153.615,
+      "moves": {
+        "1": -9.68,
+        "5": -16.424,
+        "15": -7.65,
+        "30": -1.64,
+        "60": 2.47
+      },
+      "source": "Dukascopy XAUUSD BID M1",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
+    },
     {
       "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
       "category": "CPI",
@@ -39,12 +58,50 @@
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
       "method_version": 2,
       "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "category": "FOMC",
+      "title": "Federal Reserve issues FOMC statement",
+      "published": "2026-09-16T18:00:00+00:00",
+      "release_time_utc": "2026-09-16T18:00:00+00:00",
+      "baseline": 4356.295,
+      "moves": {
+        "1": -18.13,
+        "5": -32.16,
+        "15": -46.3,
+        "30": -34.22,
+        "60": -95.72
+      },
+      "source": "Dukascopy XAUUSD BID M1",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_09112026.htm",
+      "category": "CPI",
+      "title": "CPI for all items increases 0.4% in August; gasoline rises",
+      "published": "2026-09-11T11:50:40.968000+00:00",
+      "release_time_utc": "2026-09-11T12:30:00+00:00",
+      "baseline": 4340.905,
+      "moves": {
+        "1": -44.5,
+        "5": -11.45,
+        "15": 12.701,
+        "30": 47.44,
+        "60": 48.99
+      },
+      "source": "Dukascopy XAUUSD BID M1",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
     }
   ],
   "checks": {
     "2026-10-28": "TimeoutError: The read operation timed out",
-    "2026-10-15": "HTTPError: HTTP Error 503: Service Unavailable",
-    "2026-10-14": "candles=1440, events=1, matched=1",
-    "2026-10-07": "candles=1440, events=1, matched=1"
+    "2026-10-15": "candles=1440, events=1, matched=1",
+    "2026-09-16": "candles=1440, events=1, matched=1",
+    "2026-09-11": "candles=1440, events=1, matched=1"
   }
 }
