@@ -1,0 +1,19 @@
+{
+  "updated_at": null,
+  "sources": {
+    "FOMC": {
+      "ok": false,
+      "error": "Awaiting first successful cloud check"
+    },
+    "CPI": {
+      "ok": false,
+      "error": "Awaiting first successful cloud check"
+    },
+    "PPI": {
+      "ok": false,
+      "error": "Awaiting first successful cloud check"
+    }
+  },
+  "items": [],
+  "note": "Cloud monitoring not yet verified. No live data available."
+}
