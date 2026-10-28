@@ -1,0 +1,60 @@
+{
+  "updated_at": "2026-10-28T19:15:45.744698+00:00",
+  "method": "Dukascopy XAUUSD BID M1. Difference between close of minute before release and close of minute at +1,+5,+15,+30,+60. UTC timestamps. No tick-level peak analysis.",
+  "items": [
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_10152026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand increases 1.3% in September; goods advance 2.6%, services rise 0.8%",
+      "published": "2026-10-15T11:50:51.146000+00:00",
+      "baseline": 4150.755,
+      "moves": {
+        "1": -0.44,
+        "5": -0.28,
+        "15": -3.98,
+        "30": -0.22,
+        "60": -8.35
+      },
+      "source": "Dukascopy XAUUSD bid M1; baseline is pre-release minute close",
+      "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "category": "CPI",
+      "title": "CPI for all items increases 0.6% in September; gasoline rises",
+      "published": "2026-10-14T11:50:31.200000+00:00",
+      "baseline": 4138.162,
+      "moves": {
+        "1": 0.19,
+        "5": 1.5,
+        "15": 7.033,
+        "30": 7.763,
+        "60": -33.111
+      },
+      "source": "Dukascopy XAUUSD bid M1; baseline is pre-release minute close",
+      "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
+      "category": "FOMC",
+      "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
+      "published": "2026-10-13T18:00:00+00:00",
+      "baseline": 4148.275,
+      "moves": {
+        "1": 1.45,
+        "5": 2.99,
+        "15": 10.34,
+        "30": 11.57,
+        "60": 15.01
+      },
+      "source": "Dukascopy XAUUSD bid M1; baseline is pre-release minute close",
+      "unit": "USD/oz"
+    }
+  ],
+  "checks": {
+    "2026-10-15": "ok",
+    "2026-10-14": "ok",
+    "2026-10-13": "ok",
+    "2026-10-07": "The read operation timed out"
+  }
+}
