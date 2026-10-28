@@ -82,6 +82,7 @@ for day, events in todo:
     try:
         day_prices = candles(day)
         next_prices = candles(day + dt.timedelta(days=1)) if any(event.hour >= 22 for _, event in events) else {}
+        matched = 0
         for e, event in events:
             minute = event.hour * 60 + event.minute
             base = day_prices.get(minute - 1)
@@ -94,6 +95,7 @@ for day, events in todo:
                 moves[str(n)] = round(price - base, 3) if price is not None else None
             if all(x is None for x in moves.values()):
                 continue
+            matched += 1
             valid[e["url"]] = {
                 "url": e["url"], "category": e["category"], "title": e["title"],
                 "published": e["published"], "release_time_utc": event.isoformat(),
@@ -102,9 +104,9 @@ for day, events in todo:
                 "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
                 "method_version": VERSION, "unit": "USD/oz"
             }
-        checks[str(day)] = "ok"
+        checks[str(day)] = f"candles={len(day_prices)}, events={len(events)}, matched={matched}"
     except Exception as exc:
-        checks[str(day)] = str(exc)[:150]
+        checks[str(day)] = f"{type(exc).__name__}: {exc}"[:300]
     time.sleep(1)
 result = {
     "updated_at": now.isoformat(),
@@ -113,4 +115,4 @@ result = {
     "checks": checks
 }
 path.write_text(json.dumps(result, indent=2) + "\n")
-print(json.dumps({"verified_reactions": len(valid), "checks": checks}))
+print(json.dumps({"verified_reactions": len(valid), "checks": checks}), flush=True)
