@@ -1,5 +1,10 @@
 name: Update official economic news
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/update_news.py'
+      - '.github/workflows/update-news.yml'
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
