@@ -20,14 +20,26 @@ def fetch(kind,url):
         xml=res.read()
     root=ET.fromstring(xml)
     entries=[]
-    for item in root.findall(".//item"):
-        def field(tag): return (item.findtext(tag) or "").strip()
+    for item in root.iter():
+        if item.tag.rsplit("}",1)[-1] not in ("item","entry"): continue
+        def field(tag):
+            for child in item:
+                if child.tag.rsplit("}",1)[-1] == tag:
+                    return (child.text or "").strip()
+            return ""
         title=field("title")
         link=field("link")
+        if not link:
+            for child in item:
+                if child.tag.rsplit("}",1)[-1]=="link":
+                    link=child.attrib.get("href","")
+                    if link: break
         if not title or not link.startswith("https://"): continue
-        pub=field("pubDate")
+        pub=field("pubDate") or field("published") or field("updated")
         try: published=parsedate_to_datetime(pub).astimezone(dt.timezone.utc).isoformat()
-        except (TypeError,ValueError): published=None
+        except (TypeError,ValueError):
+            try: published=dt.datetime.fromisoformat(pub.replace("Z","+00:00")).astimezone(dt.timezone.utc).isoformat()
+            except (TypeError,ValueError): published=None
         entries.append({"category":kind,"title":title,"url":link,"published":published,"summary":field("description")[:450]})
     return entries[:30]
 def main():
