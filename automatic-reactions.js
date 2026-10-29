@@ -4,13 +4,16 @@
   // Display convention: 1 gold pip = USD 0.01/oz. Not universal across brokers.
   const PIP_SIZE = 0.01;
   const WINDOW = '30';
-  const groups = ['FOMC', 'CPI', 'PPI'];
+  const groups = ['FOMC', 'CPI', 'PPI', 'GDP', 'PCE', 'CLAIMS'];
   function note(item) {
     const title = String(item.title || '');
     if (item.category === 'FOMC') {
       // An FOMC statement alone does not establish the rate decision.
       return 'Federal Reserve rate announcement';
     }
+    if (item.category === 'GDP') return 'US economic growth report';
+    if (item.category === 'PCE') return 'Federal Reserve inflation measure';
+    if (item.category === 'CLAIMS') return 'Weekly unemployment claims';
     const m = title.match(/(?:increases?|rises?|rose|up|advances?|falls?|fell|declines?|decreases?|drops?)\s+([\d.]+%)/i);
     if (m) return (item.category === 'CPI' ? 'Consumer prices' : 'Producer prices') + ' ' + (/fall|declin|decreas|drop/i.test(m[0]) ? 'fell ' : 'rose ') + m[1];
     return item.category === 'CPI' ? 'Consumer inflation report' : 'Producer inflation report';
