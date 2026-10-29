@@ -3,6 +3,8 @@
 import datetime as dt
 import json
 import lzma
+import os
+import urllib.parse
 import pathlib
 import struct
 import time
@@ -76,6 +78,49 @@ def candles(day):
                 time.sleep(3)
     raise last_error
 
+def backup_candles(day):
+    """Optional independent 1m XAU/USD source; requires GOLDPRICE_API_KEY (Pro)."""
+    key = os.environ.get("GOLDPRICE_API_KEY", "").strip()
+    if not key:
+        raise RuntimeError("GOLDPRICE_API_KEY not configured")
+    start = dt.datetime.combine(day, dt.time.min, tzinfo=dt.timezone.utc)
+    end = start + dt.timedelta(days=1)
+    params = urllib.parse.urlencode({
+        "symbol": "XAU-USD-SPOT", "interval": "1m",
+        "from": start.isoformat(), "to": end.isoformat(), "limit": "2000"
+    })
+    url = "https://api.goldprice.dev/v1/bars?" + params
+    req = urllib.request.Request(url, headers={"X-API-Key": key, "Accept": "application/json"})
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        data = json.load(resp)
+    bars = data.get("bars", [])
+    out = {}
+    for bar in bars:
+        stamp = bar.get("bar_start") or bar.get("time") or bar.get("timestamp")
+        if not stamp or bar.get("close") is None:
+            continue
+        moment = dt.datetime.fromisoformat(str(stamp).replace("Z", "+00:00"))
+        if moment.tzinfo is None:
+            raise ValueError("Backup bars have no timezone")
+        moment = moment.astimezone(dt.timezone.utc)
+        if moment.date() == day and bar.get("is_closed", True):
+            out[moment.hour * 60 + moment.minute] = float(bar["close"])
+    if not out:
+        raise ValueError("Backup returned no usable closed 1m bars")
+    return out
+
+
+def fetch_prices(day):
+    try:
+        return candles(day), "Dukascopy XAUUSD BID M1"
+    except Exception as primary:
+        if not os.environ.get("GOLDPRICE_API_KEY"):
+            raise RuntimeError(f"Primary failed: {primary}; backup requires GOLDPRICE_API_KEY") from primary
+        try:
+            return backup_candles(day), "goldprice.dev XAU/USD spot M1 close"
+        except Exception as backup:
+            raise RuntimeError(f"Primary failed: {primary}; backup failed: {backup}") from backup
+
 # Respect Dukascopy's rate limits: at most three missing days per run, with
 # persisted exponential cooldowns after 503s/timeouts. Do not let a
 # repeatedly failing recent date block the older historical backfill.
@@ -97,8 +142,8 @@ for day, es in sorted(events_by_date.items(), reverse=True):
         break
 for day, events in todo:
     try:
-        day_prices = candles(day)
-        next_prices = candles(day + dt.timedelta(days=1)) if any(event.hour >= 22 for _, event in events) else {}
+        day_prices, price_source = fetch_prices(day)
+        next_prices = {}
         matched = 0
         for e, event in events:
             minute = event.hour * 60 + event.minute
@@ -117,13 +162,13 @@ for day, events in todo:
                 "url": e["url"], "category": e["category"], "title": e["title"],
                 "published": e["published"], "release_time_utc": event.isoformat(),
                 "baseline": base, "moves": moves,
-                "source": "Dukascopy XAUUSD BID M1",
+                "source": price_source,
                 "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
                 "method_version": VERSION, "unit": "USD/oz"
             }
         if matched == 0:
             raise ValueError(f"No usable release-minute candles; day has {len(day_prices)} candles")
-        checks[str(day)] = f"candles={len(day_prices)}, events={len(events)}, matched={matched}"
+        checks[str(day)] = f"source={price_source}, candles={len(day_prices)}, events={len(events)}, matched={matched}"
         retry.pop(str(day), None)
     except Exception as exc:
         checks[str(day)] = f"{type(exc).__name__}: {exc}"[:300]
@@ -140,7 +185,6 @@ result = {
     "method": "Dukascopy BID M1 close-to-close differences from minute preceding scheduled release. CPI/PPI 08:30 New York time; FOMC statement/minutes 14:00 New York time. No intraminute high/low or causality claim.",
     "items": sorted(valid.values(), key=lambda x: x["release_time_utc"], reverse=True),
     "checks": checks,
-    "retry": retry
-}
+    "retry": retry,\n    "backup_configured": bool(os.environ.get("GOLDPRICE_API_KEY"))\n}
 path.write_text(json.dumps(result, indent=2) + "\n")
 print(json.dumps({"verified_reactions": len(valid), "attempted_days": [str(day) for day, _ in todo], "checks": checks, "retry": retry}), flush=True)
