@@ -1,23 +1,44 @@
 {
-  "updated_at": "2026-10-29T12:03:25.617646+00:00",
+  "updated_at": "2026-10-29T12:25:03.666657+00:00",
   "sources": {
     "FOMC": {
       "ok": true,
-      "checked_at": "2026-10-29T12:03:25.617646+00:00",
+      "checked_at": "2026-10-29T12:25:03.666657+00:00",
       "count": 15
     },
     "CPI": {
       "ok": true,
-      "checked_at": "2026-10-29T12:03:25.617646+00:00",
+      "checked_at": "2026-10-29T12:25:03.666657+00:00",
       "count": 12
     },
     "PPI": {
       "ok": true,
-      "checked_at": "2026-10-29T12:03:25.617646+00:00",
+      "checked_at": "2026-10-29T12:25:03.666657+00:00",
       "count": 12
     }
   },
   "items": [
+    {
+      "category": "GDP",
+      "title": "US GDP Q3 advance estimate",
+      "url": "https://www.bea.gov/data/gdp/gross-domestic-product#2026-10-29",
+      "published": "2026-10-29T12:30:00+00:00",
+      "summary": "Scheduled release; outcome not verified"
+    },
+    {
+      "category": "PCE",
+      "title": "US personal income and PCE inflation September",
+      "url": "https://www.bea.gov/data/personal-consumption-expenditures-price-index#2026-10-29",
+      "published": "2026-10-29T12:30:00+00:00",
+      "summary": "Scheduled release; outcome not verified"
+    },
+    {
+      "category": "CLAIMS",
+      "title": "US initial unemployment claims",
+      "url": "https://www.dol.gov/agencies/eta/ui-data#2026-10-29",
+      "published": "2026-10-29T12:30:00+00:00",
+      "summary": "Scheduled release; outcome not verified"
+    },
     {
       "category": "FOMC",
       "title": "Federal Reserve issues FOMC statement",
