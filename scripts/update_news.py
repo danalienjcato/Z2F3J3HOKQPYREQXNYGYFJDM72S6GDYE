@@ -61,6 +61,17 @@ def main():
             good+=1
         except Exception as ex:
             checks[kind]={"ok":False,"checked_at":now,"error":str(ex)[:180]}
+    # Verified 29 October 2026 economic-calendar events (08:30 New York time).
+    # Calendar entries are not news results or surprises; do not infer outcomes.
+    for kind, title, url in [
+        ("GDP", "US GDP Q3 advance estimate", "https://www.bea.gov/data/gdp/gross-domestic-product"),
+        ("PCE", "US personal income and PCE inflation September", "https://www.bea.gov/data/personal-consumption-expenditures-price-index"),
+        ("CLAIMS", "US initial unemployment claims", "https://www.dol.gov/agencies/eta/ui-data")
+    ]:
+        key=(kind, url+"#2026-10-29")
+        merged[key]={"category":kind,"title":title,"url":key[1],
+                     "published":"2026-10-29T12:30:00+00:00",
+                     "summary":"Scheduled release; outcome not verified"}
     items=sorted(merged.values(),key=lambda e:e.get("published") or "",reverse=True)[:120]
     data={"updated_at":now,"sources":checks,"items":items,"note":"Official release headlines, not instant execution signals. Scheduled checks may be delayed."}
     OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n")
