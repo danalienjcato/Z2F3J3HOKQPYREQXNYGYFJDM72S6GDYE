@@ -26,6 +26,8 @@ jobs:
       - name: Check official feeds
         run: python scripts/update_news.py
       - name: Calculate historical gold reactions
+        env:
+          GOLDPRICE_API_KEY: ${{ secrets.GOLDPRICE_API_KEY }}
         run: python scripts/update_reactions.py
       - name: Report historical data health
         if: always()
