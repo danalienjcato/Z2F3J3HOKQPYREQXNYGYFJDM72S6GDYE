@@ -226,6 +226,8 @@ result = {
     "method": "XAUUSD BID M1 close-to-close differences from minute preceding scheduled release. CPI/PPI 08:30 New York time; FOMC statement/minutes 14:00 New York time. No intraminute high/low or causality claim.",
     "items": sorted(valid.values(), key=lambda x: x["release_time_utc"], reverse=True),
     "checks": checks,
-    "retry": retry,\n    "backup_configured": bool(os.environ.get("GOLDPRICE_API_KEY"))\n}
+    "retry": retry,
+    "backup_configured": bool(os.environ.get("GOLDPRICE_API_KEY"))
+}
 path.write_text(json.dumps(result, indent=2) + "\n")
 print(json.dumps({"verified_reactions": len(valid), "attempted_days": [str(day) for day, _ in todo], "checks": checks, "retry": retry}), flush=True)
