@@ -23,6 +23,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install free HistData downloader
+        run: python -m pip install histdata-fetcher pandas
       - name: Check official feeds
         run: python scripts/update_news.py
       - name: Calculate historical gold reactions
