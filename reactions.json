@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T22:57:14.933296+00:00",
+  "updated_at": "2026-10-29T02:14:50.669345+00:00",
   "method": "Dukascopy BID M1 close-to-close differences from minute preceding scheduled release. CPI/PPI 08:30 New York time; FOMC statement/minutes 14:00 New York time. No intraminute high/low or causality claim.",
   "items": [
     {
@@ -99,9 +99,9 @@
     }
   ],
   "checks": {
-    "2026-10-28": "TimeoutError: The read operation timed out",
-    "2026-10-15": "candles=1440, events=1, matched=1",
-    "2026-09-16": "candles=1440, events=1, matched=1",
-    "2026-09-11": "candles=1440, events=1, matched=1"
+    "2026-10-28": "HTTPError: HTTP Error 503: Service Unavailable",
+    "2026-09-10": "TimeoutError: The read operation timed out",
+    "2026-08-19": "HTTPError: HTTP Error 503: Service Unavailable",
+    "2026-08-13": "HTTPError: HTTP Error 503: Service Unavailable"
   }
 }
