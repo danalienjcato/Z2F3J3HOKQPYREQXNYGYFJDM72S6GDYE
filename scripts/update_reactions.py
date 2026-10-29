@@ -78,24 +78,77 @@ def candles(day):
                 time.sleep(3)
     raise last_error
 
+_histdata_month_cache = {}
+
+def histdata_candles(day):
+    """HistData XAUUSD BID M1; source clock is fixed EST (UTC-05), not DST."""
+    from histdata_fetcher import fetch_data
+    # EST day overlaps two UTC days; request adjacent dates to avoid boundary loss.
+    month = (day.year, day.month)
+    if month not in _histdata_month_cache:
+        first = day.replace(day=1)
+        if day.month == 12:
+            last = dt.date(day.year, 12, 31)
+        else:
+            last = day.replace(month=day.month + 1, day=1) - dt.timedelta(days=1)
+        result = fetch_data(
+            pair="XAUUSD", start_date=first, end_date=last,
+            timeframe="1min", output_format=None, max_workers=1
+        )
+        if result.data is None or result.data.empty:
+            raise ValueError(f"HistData has no XAUUSD M1 bars for {month}")
+        _histdata_month_cache[month] = result.data
+    frame = _histdata_month_cache[month]
+    out = {}
+    for row in frame.itertuples(index=False):
+        stamp = row.datetime.to_pydatetime() if hasattr(row.datetime, "to_pydatetime") else row.datetime
+        # HistData explicitly uses EST UTC-5 year round; never America/New_York.
+        utc = stamp.replace(tzinfo=dt.timezone(dt.timedelta(hours=-5))).astimezone(dt.timezone.utc)
+        if utc.date() == day:
+            close = float(row.close)
+            if 100 < close < 100000:
+                out[utc.hour * 60 + utc.minute] = close
+    if not out:
+        raise ValueError(f"HistData lacks usable XAUUSD UTC bars for {day}")
+    return out
+
+
+def fetch_prices(day):
+    errors = []
+    try:
+        prices = candles(day)
+        if prices:
+            return prices, "Dukascopy XAUUSD BID M1"
+        errors.append("Dukascopy returned no candles")
+    except Exception as exc:
+        errors.append(f"Dukascopy: {exc}")
+    try:
+        return histdata_candles(day), "HistData XAUUSD BID M1 (fixed EST UTC-5)"
+    except Exception as exc:
+        errors.append(f"HistData: {exc}")
+    if os.environ.get("GOLDPRICE_API_KEY"):
+        try:
+            return backup_candles(day), "goldprice.dev XAU/USD spot M1 close"
+        except Exception as exc:
+            errors.append(f"goldprice.dev: {exc}")
+    raise RuntimeError("; ".join(errors))
+
+
 def backup_candles(day):
-    """Optional independent 1m XAU/USD source; requires GOLDPRICE_API_KEY (Pro)."""
-    key = os.environ.get("GOLDPRICE_API_KEY", "").strip()
-    if not key:
-        raise RuntimeError("GOLDPRICE_API_KEY not configured")
+    """Optional paid provider, only if explicitly configured."""
+    key = os.environ["GOLDPRICE_API_KEY"]
     start = dt.datetime.combine(day, dt.time.min, tzinfo=dt.timezone.utc)
     end = start + dt.timedelta(days=1)
     params = urllib.parse.urlencode({
         "symbol": "XAU-USD-SPOT", "interval": "1m",
         "from": start.isoformat(), "to": end.isoformat(), "limit": "2000"
     })
-    url = "https://api.goldprice.dev/v1/bars?" + params
-    req = urllib.request.Request(url, headers={"X-API-Key": key, "Accept": "application/json"})
+    req = urllib.request.Request("https://api.goldprice.dev/v1/bars?" + params,
+                                 headers={"X-API-Key": key, "Accept": "application/json"})
     with urllib.request.urlopen(req, timeout=20) as resp:
         data = json.load(resp)
-    bars = data.get("bars", [])
     out = {}
-    for bar in bars:
+    for bar in data.get("bars", []):
         stamp = bar.get("bar_start") or bar.get("time") or bar.get("timestamp")
         if not stamp or bar.get("close") is None:
             continue
@@ -106,20 +159,8 @@ def backup_candles(day):
         if moment.date() == day and bar.get("is_closed", True):
             out[moment.hour * 60 + moment.minute] = float(bar["close"])
     if not out:
-        raise ValueError("Backup returned no usable closed 1m bars")
+        raise ValueError("Backup returned no closed 1m bars")
     return out
-
-
-def fetch_prices(day):
-    try:
-        return candles(day), "Dukascopy XAUUSD BID M1"
-    except Exception as primary:
-        if not os.environ.get("GOLDPRICE_API_KEY"):
-            raise RuntimeError(f"Primary failed: {primary}; backup requires GOLDPRICE_API_KEY") from primary
-        try:
-            return backup_candles(day), "goldprice.dev XAU/USD spot M1 close"
-        except Exception as backup:
-            raise RuntimeError(f"Primary failed: {primary}; backup failed: {backup}") from backup
 
 # Respect Dukascopy's rate limits: at most three missing days per run, with
 # persisted exponential cooldowns after 503s/timeouts. Do not let a
@@ -182,7 +223,7 @@ for day, events in todo:
     time.sleep(1)
 result = {
     "updated_at": now.isoformat(),
-    "method": "Dukascopy BID M1 close-to-close differences from minute preceding scheduled release. CPI/PPI 08:30 New York time; FOMC statement/minutes 14:00 New York time. No intraminute high/low or causality claim.",
+    "method": "XAUUSD BID M1 close-to-close differences from minute preceding scheduled release. CPI/PPI 08:30 New York time; FOMC statement/minutes 14:00 New York time. No intraminute high/low or causality claim.",
     "items": sorted(valid.values(), key=lambda x: x["release_time_utc"], reverse=True),
     "checks": checks,
     "retry": retry,\n    "backup_configured": bool(os.environ.get("GOLDPRICE_API_KEY"))\n}
