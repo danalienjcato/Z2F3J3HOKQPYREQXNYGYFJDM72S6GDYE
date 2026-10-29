@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compute release-time-aligned historical XAUUSD reactions from Dukascopy BID M1."""
+"""Compute release-time-aligned historical XAUUSD reactions from BID M1 feeds."""
 import datetime as dt
 import json
 import lzma
@@ -116,7 +116,7 @@ def histdata_candles(day):
 def fetch_prices(day):
     errors = []
     try:
-        prices = candles(day) if day >= now.date() - dt.timedelta(days=14) else {}
+        prices = candles(day) if (day.year, day.month) == (now.year, now.month) else {}
         if prices:
             return prices, "Dukascopy XAUUSD BID M1"
         errors.append("Dukascopy skipped or returned no candles")
@@ -162,9 +162,9 @@ def backup_candles(day):
         raise ValueError("Backup returned no closed 1m bars")
     return out
 
-# Respect Dukascopy's rate limits: at most three missing days per run, with
-# persisted exponential cooldowns after 503s/timeouts. Do not let a
-# repeatedly failing recent date block the older historical backfill.
+# Process the complete remaining historical queue in one run. For past months,
+# use HistData monthly downloads; for the current month, try Dukascopy first.
+# Keep per-day failures isolated so one unavailable date cannot block older data.
 retry = old.get("retry", {})
 checks = dict(old.get("checks", {}))
 todo = []
@@ -173,7 +173,7 @@ for day, es in sorted(events_by_date.items(), reverse=True):
         continue
     # HistData fallback is independent of Dukascopy cooldowns; retry each run.
     todo.append((day, es))
-    if len(todo) >= 6:
+    if len(todo) >= 40:
         break
 for day, events in todo:
     try:
@@ -215,8 +215,18 @@ for day, events in todo:
             "next_attempt": (now + dt.timedelta(minutes=cooldown_minutes)).isoformat()
         }
     time.sleep(0.2)
+eligible_urls = {e["url"] for day_events in events_by_date.values() for e, _ in day_events}
+missing_events = [
+    {"url": e["url"], "category": e["category"], "title": e["title"], "release_time_utc": event.isoformat()}
+    for day_events in events_by_date.values() for e, event in day_events
+    if e["url"] not in valid
+]
 result = {
     "updated_at": now.isoformat(),
+    "eligible_count": len(eligible_urls),
+    "missing_count": len(missing_events),
+    "missing_events": sorted(missing_events, key=lambda x: x["release_time_utc"], reverse=True),
+    "complete": len(missing_events) == 0,
     "method": "XAUUSD BID M1 close-to-close differences from minute preceding scheduled release. CPI/PPI 08:30 New York time; FOMC statement/minutes 14:00 New York time. No intraminute high/low or causality claim.",
     "items": sorted(valid.values(), key=lambda x: x["release_time_utc"], reverse=True),
     "checks": checks,
@@ -224,4 +234,4 @@ result = {
     "backup_configured": bool(os.environ.get("GOLDPRICE_API_KEY"))
 }
 path.write_text(json.dumps(result, indent=2) + "\n")
-print(json.dumps({"verified_reactions": len(valid), "attempted_days": [str(day) for day, _ in todo], "checks": checks, "retry": retry}), flush=True)
+print(json.dumps({"verified_reactions": len(valid), "eligible": len(eligible_urls), "missing": len(missing_events), "attempted_days": [str(day) for day, _ in todo], "checks": checks, "retry": retry}), flush=True)
