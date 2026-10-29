@@ -7,7 +7,7 @@ on:
       - 'scripts/update_reactions.py'
       - '.github/workflows/update-news.yml'
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 permissions:
   contents: write
@@ -27,6 +27,38 @@ jobs:
         run: python scripts/update_news.py
       - name: Calculate historical gold reactions
         run: python scripts/update_reactions.py
+      - name: Report historical data health
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, pathlib, datetime
+          p = pathlib.Path("reactions.json")
+          if not p.exists():
+              print("::error::reactions.json missing; historical results unavailable")
+              raise SystemExit(1)
+          d = json.loads(p.read_text())
+          items = d.get("items", [])
+          retries = d.get("retry", {})
+          checks = d.get("checks", {})
+          updated = d.get("updated_at", "unknown")
+          lines = [
+              "## Spike Hunter historical XAUUSD health",
+              f"- Updated: {updated}",
+              f"- Verified reactions: {len(items)}",
+              f"- Outstanding download retries: {len(retries)}",
+              f"- Recorded checks: {len(checks)}",
+              "",
+              "### Pending retries",
+          ]
+          for day, status in sorted(retries.items()):
+              lines.append(f"- {day}: {status.get('last_error', 'unknown')} (next: {status.get('next_attempt', 'unknown')})")
+          if not retries:
+              lines.append("- None")
+          pathlib.Path(__import__("os").environ["GITHUB_STEP_SUMMARY"]).write_text("\n".join(lines) + "\n")
+          print("\n".join(lines))
+          if retries:
+              print(f"::warning::{len(retries)} historical XAUUSD download dates awaiting retry")
+          PY
       - name: Publish new data if changed
         run: |
           git config user.name "github-actions[bot]"
