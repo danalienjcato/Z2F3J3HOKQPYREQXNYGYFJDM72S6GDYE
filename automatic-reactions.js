@@ -1,75 +1,77 @@
 (async function () {
   const root = document.getElementById('automatic-reactions');
   if (!root) return;
-
+  // Display convention: 1 gold pip = USD 0.01/oz. Not universal across brokers.
+  const PIP_SIZE = 0.01;
+  const WINDOW = '30';
+  const groups = ['FOMC', 'CPI', 'PPI'];
+  function note(item) {
+    const title = String(item.title || '');
+    if (item.category === 'FOMC') {
+      // An FOMC statement alone does not establish the rate decision.
+      return 'Federal Reserve rate announcement';
+    }
+    const m = title.match(/(?:increases?|rises?|rose|up|advances?|falls?|fell|declines?|decreases?|drops?)\s+([\d.]+%)/i);
+    if (m) return (item.category === 'CPI' ? 'Consumer prices' : 'Producer prices') + ' ' + (/fall|declin|decreas|drop/i.test(m[0]) ? 'fell ' : 'rose ') + m[1];
+    return item.category === 'CPI' ? 'Consumer inflation report' : 'Producer inflation report';
+  }
+  function make(tag, cls, value) {
+    const el = document.createElement(tag);
+    if (cls) el.className = cls;
+    if (value !== undefined) el.textContent = value;
+    return el;
+  }
   async function refresh() {
     try {
-      const response = await fetch('./reactions.json?t=' + Date.now(), { cache: 'no-store' });
-      if (!response.ok) throw new Error('Historical data not yet published');
+      const response = await fetch('./reactions.json?t=' + Date.now(), {cache:'no-store'});
+      if (!response.ok) throw new Error('Historical data unavailable');
       const data = await response.json();
       const items = Array.isArray(data.items) ? data.items : [];
       root.replaceChildren();
-
-      const summary = document.createElement('p');
-      summary.className = 'muted';
-      const updated = data.updated_at
-        ? new Date(data.updated_at).toLocaleString('en-ZA', {
-            timeZone: 'Africa/Johannesburg', dateStyle: 'medium', timeStyle: 'short'
-          }) + ' SAST'
-        : 'unknown';
-      summary.textContent = items.length + ' historical reactions calculated. Last checked: ' + updated + '.';
+      const summary = make('p','muted',items.length + ' verified historical reactions. Showing the latest six per announcement type.');
       root.append(summary);
-
-      if (!items.length) {
-        const message = document.createElement('p');
-        message.textContent = 'Historical price collection is running. No valid matching price records have been published yet.';
-        root.append(message);
+      const explanation = make('p','muted','Gold movement measured 30 minutes after release against the minute before release. Pip display assumes $0.01 per pip on XAUUSD; your broker may define pips differently.');
+      root.append(explanation);
+      for (const category of groups) {
+        const section = make('section','history-group');
+        section.append(make('h3','history-heading',category + ' history'));
+        const subset = items.filter(x => x.category === category).sort((a,b)=>new Date(b.release_time_utc)-new Date(a.release_time_utc));
+        if (!subset.length) section.append(make('p','muted','No verified reactions yet.'));
+        for (const item of subset.slice(0,6)) {
+          const card = make('article','history-card');
+          const date = new Date(item.release_time_utc || item.published);
+          card.append(make('div','history-date',date.toLocaleDateString('en-ZA',{timeZone:'Africa/Johannesburg',day:'numeric',month:'short',year:'numeric'})));
+          card.append(make('div','history-note',note(item)));
+          const move = item.moves && item.moves[WINDOW];
+          if (move == null || !Number.isFinite(Number(move))) {
+            card.append(make('div','muted','30-minute gold movement unavailable'));
+          } else {
+            const pips = Math.round(Math.abs(Number(move)) / PIP_SIZE).toLocaleString('en-ZA');
+            const direction = Number(move)>0 ? 'rose' : Number(move)<0 ? 'dropped' : 'was unchanged';
+            card.append(make('div','history-move '+(Number(move)>0?'good':Number(move)<0?'bad':''),'Gold '+direction+(Number(move)===0?'':' '+pips+' pips')));
+          }
+          section.append(card);
+        }
+        if (subset.length>6) {
+          const details=make('details','history-older');
+          details.append(make('summary','', 'Show '+(subset.length-6)+' older '+category+' reactions'));
+          for(const item of subset.slice(6)) {
+            const row=make('p','muted');
+            const d=new Date(item.release_time_utc || item.published).toLocaleDateString('en-ZA',{timeZone:'Africa/Johannesburg',day:'numeric',month:'short',year:'numeric'});
+            const m=item.moves&&item.moves[WINDOW];
+            row.textContent=d+' — '+note(item)+' — '+(m==null?'No 30m movement':Number(m)>0?'Gold rose '+Math.round(Math.abs(Number(m))/PIP_SIZE).toLocaleString('en-ZA')+' pips':Number(m)<0?'Gold dropped '+Math.round(Math.abs(Number(m))/PIP_SIZE).toLocaleString('en-ZA')+' pips':'Gold unchanged');
+            details.append(row);
+          }
+          section.append(details);
+        }
+        root.append(section);
       }
-
-      for (const item of items.slice(0, 45)) {
-        const card = document.createElement('article');
-        card.className = 'item';
-        const heading = document.createElement('h3');
-        heading.textContent = item.category + ' — ' + item.title;
-
-        const meta = document.createElement('p');
-        meta.className = 'muted';
-        const release = new Date(item.release_time_utc || item.published);
-        const releaseText = release.toLocaleString('en-ZA', {
-          timeZone: 'Africa/Johannesburg', dateStyle: 'medium', timeStyle: 'short'
-        });
-        meta.textContent = releaseText + ' SAST release • Baseline: ' +
-          Number(item.baseline).toFixed(3) + ' USD/oz';
-
-        const moves = document.createElement('p');
-        moves.className = 'muted';
-        moves.textContent = [1, 5, 15, 30, 60].map(function (minutes) {
-          const value = item.moves && item.moves[String(minutes)];
-          return minutes + 'm: ' + (value == null
-            ? 'no data'
-            : (Number(value) >= 0 ? '+' : '') + Number(value).toFixed(3));
-        }).join(' | ') + ' USD/oz';
-
-        card.append(heading, meta, moves);
-        root.append(card);
-      }
-
-      const errors = Object.entries(data.checks || {}).filter(function (entry) {
-        return /Error|timed out|unavailable/i.test(String(entry[1]));
-      });
-      if (errors.length) {
-        const note = document.createElement('p');
-        note.className = 'muted';
-        note.textContent = 'Still awaiting price data for: ' +
-          errors.map(function (entry) { return entry[0]; }).join(', ') +
-          '. Automatic retries are enabled.';
-        root.append(note);
-      }
-    } catch (error) {
-      root.textContent = 'Historical price results could not be loaded. Please refresh later.';
+      const footer=make('p','muted','Key notes are simplified descriptions, not verified rate decisions. Price reactions are measured moves, not proof the announcement caused them.');
+      root.append(footer);
+    } catch(e) {
+      root.textContent='Could not load verified historical reactions. Please refresh.';
     }
   }
-
   await refresh();
-  setInterval(refresh, 120000);
+  setInterval(refresh,120000);
 })();
