@@ -14,7 +14,7 @@
         '20260916': 'Rates increased 0.25 percentage points — 3.75%–4.00%',
         '20260729': 'Rates unchanged — 3.50%–3.75%'
       };
-      const match = String(item.url || '').match(/monetary(\\d{8})a\\.htm/);
+      const match = String(item.url || '').match(/monetary(\d{8})a\.htm/);
       return match && decisions[match[1]] ? decisions[match[1]] : 'FOMC rate decision — details not yet verified';
     }
     if (item.category === 'GDP') return 'US economic growth report';
