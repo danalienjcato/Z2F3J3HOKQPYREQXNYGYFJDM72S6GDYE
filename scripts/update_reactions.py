@@ -116,10 +116,10 @@ def histdata_candles(day):
 def fetch_prices(day):
     errors = []
     try:
-        prices = candles(day)
+        prices = candles(day) if day >= now.date() - dt.timedelta(days=14) else {}
         if prices:
             return prices, "Dukascopy XAUUSD BID M1"
-        errors.append("Dukascopy returned no candles")
+        errors.append("Dukascopy skipped or returned no candles")
     except Exception as exc:
         errors.append(f"Dukascopy: {exc}")
     try:
@@ -171,15 +171,9 @@ todo = []
 for day, es in sorted(events_by_date.items(), reverse=True):
     if all(e.get("url") in valid for e, _ in es):
         continue
-    state = retry.get(str(day), {})
-    try:
-        next_attempt = dt.datetime.fromisoformat(state["next_attempt"])
-        if next_attempt > now:
-            continue
-    except (KeyError, TypeError, ValueError):
-        pass
+    # HistData fallback is independent of Dukascopy cooldowns; retry each run.
     todo.append((day, es))
-    if len(todo) >= 3:
+    if len(todo) >= 6:
         break
 for day, events in todo:
     try:
@@ -220,7 +214,7 @@ for day, events in todo:
             "last_error": checks[str(day)],
             "next_attempt": (now + dt.timedelta(minutes=cooldown_minutes)).isoformat()
         }
-    time.sleep(1)
+    time.sleep(0.2)
 result = {
     "updated_at": now.isoformat(),
     "method": "XAUUSD BID M1 close-to-close differences from minute preceding scheduled release. CPI/PPI 08:30 New York time; FOMC statement/minutes 14:00 New York time. No intraminute high/low or causality claim.",
