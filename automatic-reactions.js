@@ -8,8 +8,14 @@
   function note(item) {
     const title = String(item.title || '');
     if (item.category === 'FOMC') {
-      // An FOMC statement alone does not establish the rate decision.
-      return 'Federal Reserve rate announcement';
+      if (/minutes of the federal open market committee/i.test(title)) return 'FOMC minutes released — no new rate decision';
+      const decisions = {
+        '20261028': 'Rates unchanged — 3.75%–4.00%',
+        '20260916': 'Rates increased 0.25 percentage points — 3.75%–4.00%',
+        '20260729': 'Rates unchanged — 3.50%–3.75%'
+      };
+      const match = String(item.url || '').match(/monetary(\\d{8})a\\.htm/);
+      return match && decisions[match[1]] ? decisions[match[1]] : 'FOMC rate decision — details not yet verified';
     }
     if (item.category === 'GDP') return 'US economic growth report';
     if (item.category === 'PCE') return 'Federal Reserve inflation measure';
