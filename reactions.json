@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T08:36:26.881831+00:00",
+  "updated_at": "2026-10-29T08:40:52.453148+00:00",
   "method": "XAUUSD BID M1 close-to-close differences from minute preceding scheduled release. CPI/PPI 08:30 New York time; FOMC statement/minutes 14:00 New York time. No intraminute high/low or causality claim.",
   "items": [
     {
@@ -117,6 +117,63 @@
       "unit": "USD/oz"
     },
     {
+      "url": "https://www.bls.gov/news.release/archives/ppi_09102026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand moves up 0.4% in August; goods advance 1.1%, services rise 0.1%",
+      "published": "2026-09-10T11:50:35.512000+00:00",
+      "release_time_utc": "2026-09-10T12:30:00+00:00",
+      "baseline": 4385.795,
+      "moves": {
+        "1": 0.19,
+        "5": 0.71,
+        "15": -1.56,
+        "30": -11.43,
+        "60": -22.41
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260819a.htm",
+      "category": "FOMC",
+      "title": "Minutes of the Federal Open Market Committee, July 28\u201329, 2026",
+      "published": "2026-08-19T18:00:00+00:00",
+      "release_time_utc": "2026-08-19T18:00:00+00:00",
+      "baseline": 4493.025,
+      "moves": {
+        "1": 3.83,
+        "5": 3.74,
+        "15": -0.71,
+        "30": -5.26,
+        "60": -6.42
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_08132026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand unchanged in July; services advance 0.2%, goods fall 0.7%",
+      "published": "2026-08-13T11:50:26.955000+00:00",
+      "release_time_utc": "2026-08-13T12:30:00+00:00",
+      "baseline": 4387.855,
+      "moves": {
+        "1": 0.31,
+        "5": 0.55,
+        "15": -3.93,
+        "30": -0.42,
+        "60": 2.79
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
+    },
+    {
       "url": "https://www.bls.gov/news.release/archives/cpi_08122026.htm",
       "category": "CPI",
       "title": "CPI for all items increases 0.1% in July; shelter rises",
@@ -153,32 +210,76 @@
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
       "method_version": 2,
       "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_07152026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand declines 0.3% in June; goods fall 1.4%, services increase 0.2%",
+      "published": "2026-07-15T11:50:27.246000+00:00",
+      "release_time_utc": "2026-07-15T12:30:00+00:00",
+      "baseline": 4030.515,
+      "moves": {
+        "1": -0.85,
+        "5": 2.46,
+        "15": 6.72,
+        "30": 7.57,
+        "60": 7.99
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_07142026.htm",
+      "category": "CPI",
+      "title": "CPI for all items falls 0.4% in June; gasoline down",
+      "published": "2026-07-14T11:50:27.969000+00:00",
+      "release_time_utc": "2026-07-14T12:30:00+00:00",
+      "baseline": 4024.585,
+      "moves": {
+        "1": 0.49,
+        "5": 2.83,
+        "15": 3.35,
+        "30": 6.36,
+        "60": 5.06
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260708a.htm",
+      "category": "FOMC",
+      "title": "Minutes of the Federal Open Market Committee, June 16-17, 2026",
+      "published": "2026-07-08T18:00:00+00:00",
+      "release_time_utc": "2026-07-08T18:00:00+00:00",
+      "baseline": 4063.395,
+      "moves": {
+        "1": -2.56,
+        "5": -2.69,
+        "15": 1.65,
+        "30": 9.31,
+        "60": 0.93
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
     }
   ],
   "checks": {
     "2026-10-28": "source=Dukascopy XAUUSD BID M1, candles=1440, events=1, matched=1",
-    "2026-09-10": "HTTPError: HTTP Error 503: Service Unavailable",
-    "2026-08-19": "TimeoutError: The read operation timed out",
-    "2026-08-13": "TimeoutError: The read operation timed out",
+    "2026-09-10": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
+    "2026-08-19": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
+    "2026-08-13": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2026-08-12": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
-    "2026-07-29": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1"
+    "2026-07-29": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
+    "2026-07-15": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
+    "2026-07-14": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
+    "2026-07-08": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1"
   },
-  "retry": {
-    "2026-09-10": {
-      "failures": 1,
-      "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
-      "next_attempt": "2026-10-29T08:40:48.342478+00:00"
-    },
-    "2026-08-19": {
-      "failures": 1,
-      "last_error": "TimeoutError: The read operation timed out",
-      "next_attempt": "2026-10-29T08:40:48.342478+00:00"
-    },
-    "2026-08-13": {
-      "failures": 1,
-      "last_error": "TimeoutError: The read operation timed out",
-      "next_attempt": "2026-10-29T08:40:48.342478+00:00"
-    }
-  },
+  "retry": {},
   "backup_configured": false
 }
