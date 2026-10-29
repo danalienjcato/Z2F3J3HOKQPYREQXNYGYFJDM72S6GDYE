@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T08:40:52.453148+00:00",
+  "updated_at": "2026-10-29T10:25:32.124364+00:00",
   "method": "XAUUSD BID M1 close-to-close differences from minute preceding scheduled release. CPI/PPI 08:30 New York time; FOMC statement/minutes 14:00 New York time. No intraminute high/low or causality claim.",
   "items": [
     {
@@ -267,6 +267,120 @@
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
       "method_version": 2,
       "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+      "category": "FOMC",
+      "title": "Federal Reserve issues FOMC statement",
+      "published": "2026-06-17T18:00:00+00:00",
+      "release_time_utc": "2026-06-17T18:00:00+00:00",
+      "baseline": 4359.278,
+      "moves": {
+        "1": -0.993,
+        "5": -3.093,
+        "15": -0.453,
+        "30": 1.82,
+        "60": 20.297
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_06112026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand advances 1.1% in May; goods rise 2.8%, services increase 0.3%",
+      "published": "2026-06-11T12:30:00+00:00",
+      "release_time_utc": "2026-06-11T12:30:00+00:00",
+      "baseline": 4090.185,
+      "moves": {
+        "1": 2.01,
+        "5": -2.1,
+        "15": -5.51,
+        "30": -10.05,
+        "60": -22.01
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_06102026.htm",
+      "category": "CPI",
+      "title": "CPI for all items rises 0.5% in May; gasoline and shelter up",
+      "published": "2026-06-10T12:30:00+00:00",
+      "release_time_utc": "2026-06-10T12:30:00+00:00",
+      "baseline": 4166.415,
+      "moves": {
+        "1": -0.64,
+        "5": -1.7,
+        "15": -12.21,
+        "30": -18.91,
+        "60": -25.507
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
+      "category": "FOMC",
+      "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
+      "published": "2026-05-20T18:00:00+00:00",
+      "release_time_utc": "2026-05-20T18:00:00+00:00",
+      "baseline": 4534.265,
+      "moves": {
+        "1": -0.68,
+        "5": -2.4,
+        "15": -0.21,
+        "30": -2.067,
+        "60": -3.517
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_05132026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand advances 1.4% in April; services rise 1.2%, goods increase 2.0%",
+      "published": "2026-05-13T12:30:00+00:00",
+      "release_time_utc": "2026-05-13T12:30:00+00:00",
+      "baseline": 4698.335,
+      "moves": {
+        "1": 1.7,
+        "5": 3.75,
+        "15": 4.81,
+        "30": -1.07,
+        "60": -14.277
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_05122026.htm",
+      "category": "CPI",
+      "title": "CPI for all items rises 0.6% in April; shelter and gasoline up",
+      "published": "2026-05-12T12:30:00+00:00",
+      "release_time_utc": "2026-05-12T12:30:00+00:00",
+      "baseline": 4699.975,
+      "moves": {
+        "1": 1.01,
+        "5": -1.37,
+        "15": 4.13,
+        "30": 6.42,
+        "60": -2.71
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 2,
+      "unit": "USD/oz"
     }
   ],
   "checks": {
@@ -278,7 +392,13 @@
     "2026-07-29": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2026-07-15": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2026-07-14": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
-    "2026-07-08": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1"
+    "2026-07-08": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
+    "2026-06-17": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
+    "2026-06-11": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
+    "2026-06-10": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
+    "2026-05-20": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
+    "2026-05-13": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1376, events=1, matched=1",
+    "2026-05-12": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1"
   },
   "retry": {},
   "backup_configured": false
