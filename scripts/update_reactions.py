@@ -55,10 +55,10 @@ for x in old.get("items", []):
 def candles(day):
     url = f"https://datafeed.dukascopy.com/datafeed/XAUUSD/{day.year}/{day.month-1:02d}/{day.day:02d}/BID_candles_min_1.bi5"
     last_error = None
-    for attempt in range(1):
+    for attempt in range(2):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 SpikeHunterResearch"})
-            with urllib.request.urlopen(req, timeout=22) as resp:
+            with urllib.request.urlopen(req, timeout=15) as resp:
                 raw = resp.read()
             if not raw:
                 return {}
@@ -72,11 +72,11 @@ def candles(day):
             return out
         except Exception as exc:
             last_error = exc
-            if attempt:
-                time.sleep(1 + attempt)
+            if attempt == 0:
+                time.sleep(3)
     raise last_error
 
-# Respect Dukascopy's rate limits: one missing day per run, with
+# Respect Dukascopy's rate limits: at most three missing days per run, with
 # persisted exponential cooldowns after 503s/timeouts. Do not let a
 # repeatedly failing recent date block the older historical backfill.
 retry = old.get("retry", {})
@@ -93,7 +93,8 @@ for day, es in sorted(events_by_date.items(), reverse=True):
     except (KeyError, TypeError, ValueError):
         pass
     todo.append((day, es))
-    break
+    if len(todo) >= 3:
+        break
 for day, events in todo:
     try:
         day_prices = candles(day)
