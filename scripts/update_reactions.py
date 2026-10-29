@@ -26,7 +26,9 @@ def event_time(e):
         return None
     kind = e.get("category")
     title = e.get("title", "").lower()
-    if kind in ("CPI", "PPI"):
+    if kind in ("GDP", "PCE", "CLAIMS"):
+        hour, minute = 8, 30
+    elif kind in ("CPI", "PPI"):
         hour, minute = 8, 30  # BLS scheduled releases, America/New_York
     elif kind == "FOMC" and ("fomc statement" in title or "minutes of the federal open market committee" in title):
         hour, minute = 14, 0  # Fed statement / FOMC minutes, America/New_York
