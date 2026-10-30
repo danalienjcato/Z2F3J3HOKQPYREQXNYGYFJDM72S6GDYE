@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-30T14:14:49.028670+00:00",
+  "updated_at": "2026-10-30T19:26:09.581977+00:00",
   "eligible_count": 35,
-  "missing_count": 4,
+  "missing_count": 3,
   "missing_events": [
     {
       "url": "https://www.bea.gov/data/gdp/gross-domestic-product#2026-10-29",
@@ -20,17 +20,52 @@
       "category": "CLAIMS",
       "title": "US initial unemployment claims",
       "release_time_utc": "2026-10-29T12:30:00+00:00"
-    },
-    {
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
-      "category": "FOMC",
-      "title": "Federal Reserve issues FOMC statement",
-      "release_time_utc": "2026-10-28T18:00:00+00:00"
     }
   ],
   "complete": false,
   "method": "XAUUSD BID M1 OHLC. Spike extrema measured from pre-release minute close to maximum high/minimum low during first 1, 5, 15 and 30 minutes. First-minute direction uses first minute close. No tick-level first move or causality claim.",
   "items": [
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "category": "FOMC",
+      "title": "Federal Reserve issues FOMC statement",
+      "published": "2026-10-28T18:00:00+00:00",
+      "release_time_utc": "2026-10-28T18:00:00+00:00",
+      "baseline": 4040.435,
+      "moves": {
+        "1": -1.551,
+        "5": -6.651,
+        "15": -6.58,
+        "30": -4.37,
+        "60": -7.911
+      },
+      "spikes": {
+        "1": {
+          "up_usd": 6.43,
+          "down_usd": 2.041,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 6.43,
+          "down_usd": 7.381,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 6.43,
+          "down_usd": 10.45,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 6.43,
+          "down_usd": 11.04,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "source": "Dukascopy XAUUSD BID M1",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 3,
+      "unit": "USD/oz"
+    },
     {
       "url": "https://www.bls.gov/news.release/archives/ppi_10152026.htm",
       "category": "PPI",
@@ -1304,7 +1339,7 @@
     }
   ],
   "checks": {
-    "2026-10-28": "RuntimeError: Dukascopy: HTTP Error 503: Service Unavailable; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-28",
+    "2026-10-28": "source=Dukascopy XAUUSD BID M1, candles=1440, events=1, matched=1",
     "2026-09-10": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2026-08-19": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2026-08-13": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
@@ -1331,7 +1366,7 @@
     "2025-12-18": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2025-11-25": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2025-10-24": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1320, events=1, matched=1",
-    "2026-10-29": "RuntimeError: Dukascopy: The read operation timed out; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-29",
+    "2026-10-29": "RuntimeError: Dukascopy: HTTP Error 503: Service Unavailable; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-29",
     "2026-10-15": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2026-10-14": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2026-10-07": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
@@ -1340,14 +1375,9 @@
   },
   "retry": {
     "2026-10-29": {
-      "failures": 6,
-      "last_error": "RuntimeError: Dukascopy: The read operation timed out; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-29",
-      "next_attempt": "2026-10-30T18:14:49.028670+00:00"
-    },
-    "2026-10-28": {
-      "failures": 2,
-      "last_error": "RuntimeError: Dukascopy: HTTP Error 503: Service Unavailable; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-28",
-      "next_attempt": "2026-10-30T14:44:49.028670+00:00"
+      "failures": 7,
+      "last_error": "RuntimeError: Dukascopy: HTTP Error 503: Service Unavailable; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-29",
+      "next_attempt": "2026-10-30T23:26:09.581977+00:00"
     }
   },
   "backup_configured": false
