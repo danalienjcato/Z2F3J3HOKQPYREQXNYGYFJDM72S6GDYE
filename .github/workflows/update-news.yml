@@ -51,6 +51,8 @@ jobs:
               "## Spike Hunter historical XAUUSD health",
               f"- Updated: {updated}",
               f"- Verified reactions: {len(items)}",
+              f"- Verified initial spike records: {sum(bool(x.get('spikes')) for x in items)}",
+              f"- Missing eligible events: {d.get('missing_count', 'unknown')}",
               f"- Outstanding download retries: {len(retries)}",
               f"- Recorded checks: {len(checks)}",
               "",
