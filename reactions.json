@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T01:22:01.565182+00:00",
+  "updated_at": "2026-10-30T07:17:25.962505+00:00",
   "eligible_count": 35,
   "missing_count": 3,
   "missing_events": [
@@ -662,13 +662,13 @@
     "2025-12-18": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2025-11-25": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2025-10-24": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1320, events=1, matched=1",
-    "2026-10-29": "RuntimeError: Dukascopy: The read operation timed out; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-29"
+    "2026-10-29": "RuntimeError: Dukascopy: HTTP Error 503: Service Unavailable; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-29"
   },
   "retry": {
     "2026-10-29": {
-      "failures": 3,
-      "last_error": "RuntimeError: Dukascopy: The read operation timed out; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-29",
-      "next_attempt": "2026-10-30T02:22:01.565182+00:00"
+      "failures": 4,
+      "last_error": "RuntimeError: Dukascopy: HTTP Error 503: Service Unavailable; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-29",
+      "next_attempt": "2026-10-30T09:17:25.962505+00:00"
     }
   },
   "backup_configured": false
