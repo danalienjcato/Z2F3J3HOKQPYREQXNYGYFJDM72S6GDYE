@@ -16,7 +16,7 @@ news = json.loads((ROOT / "news.json").read_text())
 path = ROOT / "reactions.json"
 now = dt.datetime.now(dt.timezone.utc)
 ny = ZoneInfo("America/New_York")
-VERSION = 2
+VERSION = 3
 
 def event_time(e):
     """Use official release clock time, NOT potentially early RSS publish timestamp."""
@@ -72,7 +72,7 @@ def candles(day):
             out = {}
             for sec, op, close, low, high, volume in struct.iter_unpack(">IIIIIf", blob):
                 if sec < 86400 and 100000 < close < 20000000:
-                    out[sec // 60] = close / 1000
+                    out[sec // 60] = (close / 1000, low / 1000, high / 1000)
             return out
         except Exception as exc:
             last_error = exc
@@ -109,7 +109,7 @@ def histdata_candles(day):
         if utc.date() == day:
             close = float(row.close)
             if 100 < close < 100000:
-                out[utc.hour * 60 + utc.minute] = close
+                out[utc.hour * 60 + utc.minute] = (close, float(row.low), float(row.high))
     if not out:
         raise ValueError(f"HistData lacks usable XAUUSD UTC bars for {day}")
     return out
@@ -159,7 +159,7 @@ def backup_candles(day):
             raise ValueError("Backup bars have no timezone")
         moment = moment.astimezone(dt.timezone.utc)
         if moment.date() == day and bar.get("is_closed", True):
-            out[moment.hour * 60 + moment.minute] = float(bar["close"])
+            out[moment.hour * 60 + moment.minute] = (float(bar["close"]), float(bar.get("low", bar["close"])), float(bar.get("high", bar["close"])))
     if not out:
         raise ValueError("Backup returned no closed 1m bars")
     return out
@@ -184,21 +184,34 @@ for day, events in todo:
         matched = 0
         for e, event in events:
             minute = event.hour * 60 + event.minute
-            base = day_prices.get(minute - 1)
+            base_bar = day_prices.get(minute - 1)
+            if base_bar is None:
+                continue
+            base = base_bar[0]
             if base is None:
                 continue
             moves = {}
             for n in (1, 5, 15, 30, 60):
                 target = minute + n - 1
                 price = (day_prices if target < 1440 else next_prices).get(target % 1440)
-                moves[str(n)] = round(price - base, 3) if price is not None else None
+                moves[str(n)] = round(price[0] - base, 3) if price is not None else None
+            spikes = {}
+            for n in (1, 5, 15, 30):
+                bars = [day_prices.get(minute + offset) for offset in range(n)]
+                if any(bar is None for bar in bars):
+                    spikes[str(n)] = None
+                    continue
+                max_up = round(max(bar[2] for bar in bars) - base, 3)
+                max_down = round(base - min(bar[1] for bar in bars), 3)
+                first = bars[0][0] - base
+                spikes[str(n)] = {"up_usd": max(0, max_up), "down_usd": max(0, max_down), "first_minute_direction": "UP" if first > 0 else "DOWN" if first < 0 else "FLAT"}
             if all(x is None for x in moves.values()):
                 continue
             matched += 1
             valid[e["url"]] = {
                 "url": e["url"], "category": e["category"], "title": e["title"],
                 "published": e["published"], "release_time_utc": event.isoformat(),
-                "baseline": base, "moves": moves,
+                "baseline": base, "moves": moves, "spikes": spikes,
                 "source": price_source,
                 "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
                 "method_version": VERSION, "unit": "USD/oz"
@@ -229,7 +242,7 @@ result = {
     "missing_count": len(missing_events),
     "missing_events": sorted(missing_events, key=lambda x: x["release_time_utc"], reverse=True),
     "complete": len(missing_events) == 0,
-    "method": "XAUUSD BID M1 close-to-close differences from minute preceding scheduled release. CPI/PPI 08:30 New York time; FOMC statement/minutes 14:00 New York time. No intraminute high/low or causality claim.",
+    "method": "XAUUSD BID M1 OHLC. Spike extrema measured from pre-release minute close to maximum high/minimum low during first 1, 5, 15 and 30 minutes. First-minute direction uses first minute close. No tick-level first move or causality claim.",
     "items": sorted(valid.values(), key=lambda x: x["release_time_utc"], reverse=True),
     "checks": checks,
     "retry": retry,
