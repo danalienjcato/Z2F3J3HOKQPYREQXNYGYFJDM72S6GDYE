@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-30T07:17:25.962505+00:00",
+  "updated_at": "2026-10-30T11:00:37.680313+00:00",
   "eligible_count": 35,
-  "missing_count": 3,
+  "missing_count": 4,
   "missing_events": [
     {
       "url": "https://www.bea.gov/data/gdp/gross-domestic-product#2026-10-29",
@@ -20,47 +20,56 @@
       "category": "CLAIMS",
       "title": "US initial unemployment claims",
       "release_time_utc": "2026-10-29T12:30:00+00:00"
-    }
-  ],
-  "complete": false,
-  "method": "XAUUSD BID M1 close-to-close differences from minute preceding scheduled release. CPI/PPI 08:30 New York time; FOMC statement/minutes 14:00 New York time. No intraminute high/low or causality claim.",
-  "items": [
+    },
     {
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
       "category": "FOMC",
       "title": "Federal Reserve issues FOMC statement",
-      "published": "2026-10-28T18:00:00+00:00",
-      "release_time_utc": "2026-10-28T18:00:00+00:00",
-      "baseline": 4040.435,
-      "moves": {
-        "1": -1.551,
-        "5": -6.651,
-        "15": -6.58,
-        "30": -4.37,
-        "60": -7.911
-      },
-      "source": "Dukascopy XAUUSD BID M1",
-      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
-      "unit": "USD/oz"
-    },
+      "release_time_utc": "2026-10-28T18:00:00+00:00"
+    }
+  ],
+  "complete": false,
+  "method": "XAUUSD BID M1 OHLC. Spike extrema measured from pre-release minute close to maximum high/minimum low during first 1, 5, 15 and 30 minutes. First-minute direction uses first minute close. No tick-level first move or causality claim.",
+  "items": [
     {
       "url": "https://www.bls.gov/news.release/archives/ppi_10152026.htm",
       "category": "PPI",
       "title": "PPI for final demand increases 1.3% in September; goods advance 2.6%, services rise 0.8%",
       "published": "2026-10-15T11:50:51.146000+00:00",
       "release_time_utc": "2026-10-15T12:30:00+00:00",
-      "baseline": 4153.615,
+      "baseline": 4155.935,
       "moves": {
-        "1": -9.68,
-        "5": -16.424,
-        "15": -7.65,
-        "30": -1.64,
-        "60": 2.47
+        "1": 2.41,
+        "5": 0.9,
+        "15": -5.47,
+        "30": -11.13,
+        "60": -2.32
       },
-      "source": "Dukascopy XAUUSD BID M1",
+      "spikes": {
+        "1": {
+          "up_usd": 2.45,
+          "down_usd": 0,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 2.77,
+          "down_usd": 0,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 2.77,
+          "down_usd": 5.97,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 2.77,
+          "down_usd": 11.49,
+          "first_minute_direction": "UP"
+        }
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -69,17 +78,39 @@
       "title": "CPI for all items increases 0.6% in September; gasoline rises",
       "published": "2026-10-14T11:50:31.200000+00:00",
       "release_time_utc": "2026-10-14T12:30:00+00:00",
-      "baseline": 4150.665,
+      "baseline": 4139.005,
       "moves": {
-        "1": -22.68,
-        "5": -36.43,
-        "15": -57.684,
-        "30": -52.954,
-        "60": -60.59
+        "1": 0.51,
+        "5": 0.74,
+        "15": 0.347,
+        "30": 0.15,
+        "60": 11.86
       },
-      "source": "Dukascopy XAUUSD BID M1",
+      "spikes": {
+        "1": {
+          "up_usd": 0.58,
+          "down_usd": 0.442,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 1.43,
+          "down_usd": 0.442,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 1.43,
+          "down_usd": 0.88,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 2.966,
+          "down_usd": 2.28,
+          "first_minute_direction": "UP"
+        }
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -88,17 +119,39 @@
       "title": "Minutes of the Federal Open Market Committee, September 15-16, 2026",
       "published": "2026-10-07T18:00:00+00:00",
       "release_time_utc": "2026-10-07T18:00:00+00:00",
-      "baseline": 4109.555,
+      "baseline": 4109.275,
       "moves": {
-        "1": 0.56,
-        "5": 5.16,
-        "15": 3.39,
-        "30": 1.84,
-        "60": -0.69
+        "1": 0.06,
+        "5": 3.35,
+        "15": 10.39,
+        "30": 4.65,
+        "60": 0.28
       },
-      "source": "Dukascopy XAUUSD BID M1",
+      "spikes": {
+        "1": {
+          "up_usd": 0.4,
+          "down_usd": 0.73,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 6.0,
+          "down_usd": 1.13,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 17.47,
+          "down_usd": 1.13,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 17.47,
+          "down_usd": 1.13,
+          "first_minute_direction": "UP"
+        }
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -107,17 +160,39 @@
       "title": "Federal Reserve issues FOMC statement",
       "published": "2026-09-16T18:00:00+00:00",
       "release_time_utc": "2026-09-16T18:00:00+00:00",
-      "baseline": 4356.295,
+      "baseline": 4346.295,
       "moves": {
-        "1": -18.13,
-        "5": -32.16,
-        "15": -46.3,
-        "30": -34.22,
-        "60": -95.72
+        "1": -1.29,
+        "5": -1.84,
+        "15": -3.05,
+        "30": 0.42,
+        "60": 10.49
       },
-      "source": "Dukascopy XAUUSD BID M1",
+      "spikes": {
+        "1": {
+          "up_usd": 0.21,
+          "down_usd": 1.56,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 0.21,
+          "down_usd": 3.56,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 0.21,
+          "down_usd": 4.91,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 1.01,
+          "down_usd": 4.91,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -126,17 +201,39 @@
       "title": "CPI for all items increases 0.4% in August; gasoline rises",
       "published": "2026-09-11T11:50:40.968000+00:00",
       "release_time_utc": "2026-09-11T12:30:00+00:00",
-      "baseline": 4340.905,
+      "baseline": 4336.205,
       "moves": {
-        "1": -44.5,
-        "5": -11.45,
-        "15": 12.701,
-        "30": 47.44,
-        "60": 48.99
+        "1": 0.01,
+        "5": -4.8,
+        "15": -1.717,
+        "30": -3.097,
+        "60": 2.53
       },
-      "source": "Dukascopy XAUUSD BID M1",
+      "spikes": {
+        "1": {
+          "up_usd": 0.7,
+          "down_usd": 0.83,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 0.9,
+          "down_usd": 4.8,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 0.9,
+          "down_usd": 6.337,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 0.9,
+          "down_usd": 6.337,
+          "first_minute_direction": "UP"
+        }
+      },
+      "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -153,9 +250,31 @@
         "30": -11.43,
         "60": -22.41
       },
+      "spikes": {
+        "1": {
+          "up_usd": 0.43,
+          "down_usd": 0.91,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 2.67,
+          "down_usd": 1.491,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 4.77,
+          "down_usd": 1.62,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 4.77,
+          "down_usd": 11.54,
+          "first_minute_direction": "UP"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -172,9 +291,31 @@
         "30": -5.26,
         "60": -6.42
       },
+      "spikes": {
+        "1": {
+          "up_usd": 4.38,
+          "down_usd": 0,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 5.95,
+          "down_usd": 0,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 5.95,
+          "down_usd": 4.24,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 5.95,
+          "down_usd": 7.09,
+          "first_minute_direction": "UP"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -191,9 +332,31 @@
         "30": -0.42,
         "60": 2.79
       },
+      "spikes": {
+        "1": {
+          "up_usd": 1.17,
+          "down_usd": 0,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 1.28,
+          "down_usd": 1.22,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 1.76,
+          "down_usd": 4.21,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 1.76,
+          "down_usd": 5.14,
+          "first_minute_direction": "UP"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -210,9 +373,31 @@
         "30": -2.28,
         "60": 9.57
       },
+      "spikes": {
+        "1": {
+          "up_usd": 0.86,
+          "down_usd": 0.69,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 0.86,
+          "down_usd": 2.19,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 0.86,
+          "down_usd": 4.92,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 0.86,
+          "down_usd": 4.92,
+          "first_minute_direction": "DOWN"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -229,9 +414,31 @@
         "30": 12.16,
         "60": 15.57
       },
+      "spikes": {
+        "1": {
+          "up_usd": 3.8,
+          "down_usd": 0.07,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 10.45,
+          "down_usd": 0.07,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 23.39,
+          "down_usd": 0.07,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 23.39,
+          "down_usd": 0.07,
+          "first_minute_direction": "UP"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -248,9 +455,31 @@
         "30": 7.57,
         "60": 7.99
       },
+      "spikes": {
+        "1": {
+          "up_usd": 0.25,
+          "down_usd": 1.46,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 2.85,
+          "down_usd": 1.46,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 8.8,
+          "down_usd": 1.46,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 9.47,
+          "down_usd": 1.46,
+          "first_minute_direction": "DOWN"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -267,9 +496,31 @@
         "30": 6.36,
         "60": 5.06
       },
+      "spikes": {
+        "1": {
+          "up_usd": 1.33,
+          "down_usd": 0.38,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 4.14,
+          "down_usd": 0.38,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 5.51,
+          "down_usd": 0.38,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 6.97,
+          "down_usd": 0.38,
+          "first_minute_direction": "UP"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -286,9 +537,31 @@
         "30": 9.31,
         "60": 0.93
       },
+      "spikes": {
+        "1": {
+          "up_usd": 0.38,
+          "down_usd": 2.56,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 0.38,
+          "down_usd": 4.02,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 6.74,
+          "down_usd": 4.02,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 10.47,
+          "down_usd": 4.02,
+          "first_minute_direction": "DOWN"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -305,9 +578,31 @@
         "30": 1.82,
         "60": 20.297
       },
+      "spikes": {
+        "1": {
+          "up_usd": 0,
+          "down_usd": 1.133,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 0,
+          "down_usd": 4.253,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 1.597,
+          "down_usd": 4.253,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 4.497,
+          "down_usd": 4.253,
+          "first_minute_direction": "DOWN"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -324,9 +619,31 @@
         "30": -10.05,
         "60": -22.01
       },
+      "spikes": {
+        "1": {
+          "up_usd": 5.53,
+          "down_usd": 0.77,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 5.53,
+          "down_usd": 2.28,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 5.53,
+          "down_usd": 8.74,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 5.53,
+          "down_usd": 10.55,
+          "first_minute_direction": "UP"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -343,9 +660,31 @@
         "30": -18.91,
         "60": -25.507
       },
+      "spikes": {
+        "1": {
+          "up_usd": 1.4,
+          "down_usd": 1.85,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 1.4,
+          "down_usd": 5.45,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 1.4,
+          "down_usd": 12.33,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 1.4,
+          "down_usd": 20.75,
+          "first_minute_direction": "DOWN"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -362,9 +701,31 @@
         "30": -2.067,
         "60": -3.517
       },
+      "spikes": {
+        "1": {
+          "up_usd": 0.32,
+          "down_usd": 1.83,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 0.32,
+          "down_usd": 3.04,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 3.98,
+          "down_usd": 3.39,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 3.98,
+          "down_usd": 3.537,
+          "first_minute_direction": "DOWN"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -381,9 +742,31 @@
         "30": -1.07,
         "60": -14.277
       },
+      "spikes": {
+        "1": {
+          "up_usd": 2.0,
+          "down_usd": 0.38,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 4.64,
+          "down_usd": 0.38,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 6.86,
+          "down_usd": 0.38,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 6.99,
+          "down_usd": 1.07,
+          "first_minute_direction": "UP"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -400,9 +783,31 @@
         "30": 6.42,
         "60": -2.71
       },
+      "spikes": {
+        "1": {
+          "up_usd": 2.12,
+          "down_usd": 0.23,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 2.12,
+          "down_usd": 2.32,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 5.92,
+          "down_usd": 2.32,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 9.01,
+          "down_usd": 2.32,
+          "first_minute_direction": "UP"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -419,9 +824,31 @@
         "30": -3.387,
         "60": -9.71
       },
+      "spikes": {
+        "1": {
+          "up_usd": 0.28,
+          "down_usd": 1.57,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 0.28,
+          "down_usd": 4.98,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 1.78,
+          "down_usd": 4.98,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 4.553,
+          "down_usd": 7.667,
+          "first_minute_direction": "DOWN"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -438,9 +865,31 @@
         "30": 6.49,
         "60": 0.96
       },
+      "spikes": {
+        "1": {
+          "up_usd": 1.48,
+          "down_usd": 0.49,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 1.48,
+          "down_usd": 3.207,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 5.3,
+          "down_usd": 3.207,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 6.97,
+          "down_usd": 3.207,
+          "first_minute_direction": "UP"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -457,9 +906,31 @@
         "30": -19.92,
         "60": -39.95
       },
+      "spikes": {
+        "1": {
+          "up_usd": 0.26,
+          "down_usd": 10.35,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 0.26,
+          "down_usd": 16.63,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 0.26,
+          "down_usd": 27.41,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 0.26,
+          "down_usd": 30.87,
+          "first_minute_direction": "DOWN"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -476,9 +947,31 @@
         "30": -22.8,
         "60": -8.78
       },
+      "spikes": {
+        "1": {
+          "up_usd": 5.933,
+          "down_usd": 5.9,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 5.933,
+          "down_usd": 11.17,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 5.933,
+          "down_usd": 17.247,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 5.933,
+          "down_usd": 23.52,
+          "first_minute_direction": "DOWN"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -495,9 +988,31 @@
         "30": -11.913,
         "60": -3.783
       },
+      "spikes": {
+        "1": {
+          "up_usd": 1.04,
+          "down_usd": 12.793,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 1.04,
+          "down_usd": 15.073,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 1.04,
+          "down_usd": 27.333,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 1.04,
+          "down_usd": 27.333,
+          "first_minute_direction": "DOWN"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -514,9 +1029,31 @@
         "30": 20.08,
         "60": 35.563
       },
+      "spikes": {
+        "1": {
+          "up_usd": 32.21,
+          "down_usd": 0.357,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 32.49,
+          "down_usd": 0.357,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 32.49,
+          "down_usd": 0.357,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 32.49,
+          "down_usd": 0.357,
+          "first_minute_direction": "UP"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -533,9 +1070,31 @@
         "30": -5.943,
         "60": 46.627
       },
+      "spikes": {
+        "1": {
+          "up_usd": 6.92,
+          "down_usd": 11.693,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 11.19,
+          "down_usd": 14.91,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 22.49,
+          "down_usd": 14.91,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 22.49,
+          "down_usd": 34.033,
+          "first_minute_direction": "DOWN"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -552,9 +1111,31 @@
         "30": 4.34,
         "60": 4.03
       },
+      "spikes": {
+        "1": {
+          "up_usd": 0.8,
+          "down_usd": 7.51,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 2.37,
+          "down_usd": 7.51,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 5.98,
+          "down_usd": 7.51,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 5.98,
+          "down_usd": 7.51,
+          "first_minute_direction": "DOWN"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -571,9 +1152,31 @@
         "30": 10.99,
         "60": 17.963
       },
+      "spikes": {
+        "1": {
+          "up_usd": 14.02,
+          "down_usd": 0.25,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 14.02,
+          "down_usd": 0.25,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 19.95,
+          "down_usd": 0.25,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 20.393,
+          "down_usd": 0.25,
+          "first_minute_direction": "UP"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -590,9 +1193,31 @@
         "30": 15.82,
         "60": 11.91
       },
+      "spikes": {
+        "1": {
+          "up_usd": 15.203,
+          "down_usd": 0.04,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 15.203,
+          "down_usd": 0.04,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 17.66,
+          "down_usd": 0.04,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 22.35,
+          "down_usd": 0.04,
+          "first_minute_direction": "UP"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -609,9 +1234,31 @@
         "30": 6.121,
         "60": -7.2
       },
+      "spikes": {
+        "1": {
+          "up_usd": 7.25,
+          "down_usd": 0.1,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_usd": 7.25,
+          "down_usd": 0.1,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_usd": 9.3,
+          "down_usd": 0.1,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_usd": 9.3,
+          "down_usd": 0.1,
+          "first_minute_direction": "UP"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     },
     {
@@ -628,14 +1275,36 @@
         "30": 4.79,
         "60": 4.37
       },
+      "spikes": {
+        "1": {
+          "up_usd": 0.25,
+          "down_usd": 1.64,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 3.66,
+          "down_usd": 1.64,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 3.66,
+          "down_usd": 2.03,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 8.95,
+          "down_usd": 2.03,
+          "first_minute_direction": "DOWN"
+        }
+      },
       "source": "HistData XAUUSD BID M1 (fixed EST UTC-5)",
       "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
-      "method_version": 2,
+      "method_version": 3,
       "unit": "USD/oz"
     }
   ],
   "checks": {
-    "2026-10-28": "source=Dukascopy XAUUSD BID M1, candles=1440, events=1, matched=1",
+    "2026-10-28": "RuntimeError: Dukascopy: The read operation timed out; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-28",
     "2026-09-10": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2026-08-19": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2026-08-13": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
@@ -662,13 +1331,23 @@
     "2025-12-18": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2025-11-25": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2025-10-24": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1320, events=1, matched=1",
-    "2026-10-29": "RuntimeError: Dukascopy: HTTP Error 503: Service Unavailable; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-29"
+    "2026-10-29": "RuntimeError: Dukascopy: The read operation timed out; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-29",
+    "2026-10-15": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
+    "2026-10-14": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
+    "2026-10-07": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
+    "2026-09-16": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
+    "2026-09-11": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1320, events=1, matched=1"
   },
   "retry": {
     "2026-10-29": {
-      "failures": 4,
-      "last_error": "RuntimeError: Dukascopy: HTTP Error 503: Service Unavailable; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-29",
-      "next_attempt": "2026-10-30T09:17:25.962505+00:00"
+      "failures": 5,
+      "last_error": "RuntimeError: Dukascopy: The read operation timed out; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-29",
+      "next_attempt": "2026-10-30T15:00:37.680313+00:00"
+    },
+    "2026-10-28": {
+      "failures": 1,
+      "last_error": "RuntimeError: Dukascopy: The read operation timed out; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-28",
+      "next_attempt": "2026-10-30T11:15:37.680313+00:00"
     }
   },
   "backup_configured": false
