@@ -80,6 +80,27 @@
         }
         root.append(section);
       }
+      // Pair CPI and PPI releases within three calendar days. Count only verified first-minute directions.
+      const cpi = items.filter(x => x.category === 'CPI' && x.spikes && x.spikes['1']);
+      const ppi = items.filter(x => x.category === 'PPI' && x.spikes && x.spikes['1']);
+      const pairs = [];
+      for (const a of cpi) {
+        const at = new Date(a.release_time_utc).getTime();
+        const candidates = ppi.map(b => ({b, gap:Math.abs(new Date(b.release_time_utc).getTime()-at)}))
+          .filter(x => x.gap <= 3*86400000).sort((x,y)=>x.gap-y.gap);
+        if (candidates.length) pairs.push({a,b:candidates[0].b});
+      }
+      const comparable = pairs.filter(x => ['UP','DOWN'].includes(x.a.spikes['1'].first_minute_direction) && ['UP','DOWN'].includes(x.b.spikes['1'].first_minute_direction));
+      const matches = comparable.filter(x => x.a.spikes['1'].first_minute_direction === x.b.spikes['1'].first_minute_direction);
+      const pattern = make('section','history-group');
+      pattern.append(make('h3','history-heading','CPI + PPI pattern matching'));
+      pattern.append(make('p','muted',comparable.length ? matches.length+' of '+comparable.length+' paired releases moved in the same first-minute direction ('+Math.round(100*matches.length/comparable.length)+'%).' : 'Awaiting verified initial-spike data to compare CPI and PPI.'));
+      for (const x of comparable.slice(0,6)) {
+        const date = new Date(x.a.release_time_utc).toLocaleDateString('en-ZA',{timeZone:'Africa/Johannesburg',day:'numeric',month:'short',year:'numeric'});
+        const same = x.a.spikes['1'].first_minute_direction === x.b.spikes['1'].first_minute_direction;
+        pattern.append(make('p',same?'good':'bad',date+' — CPI '+x.a.spikes['1'].first_minute_direction+' / PPI '+x.b.spikes['1'].first_minute_direction+' — '+(same?'MATCH':'OPPOSITE')));
+      }
+      root.append(pattern);
       const footer=make('p','muted','Unverified news outcomes are labelled. Spike ranges are measured price moves, not proof the announcement caused them.');
       root.append(footer);
     } catch(e) {
