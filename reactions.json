@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T02:26:53.745900+00:00",
+  "updated_at": "2026-10-31T08:44:40.543185+00:00",
   "eligible_count": 35,
   "missing_count": 3,
   "missing_events": [
@@ -1375,9 +1375,9 @@
   },
   "retry": {
     "2026-10-29": {
-      "failures": 9,
+      "failures": 10,
       "last_error": "RuntimeError: Dukascopy: HTTP Error 503: Service Unavailable; HistData: HistData lacks usable XAUUSD UTC bars for 2026-10-29",
-      "next_attempt": "2026-10-31T06:26:53.745900+00:00"
+      "next_attempt": "2026-10-31T12:44:40.543185+00:00"
     }
   },
   "backup_configured": false
