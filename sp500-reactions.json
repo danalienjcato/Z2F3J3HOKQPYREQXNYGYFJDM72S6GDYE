@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-01T19:36:02.250441+00:00",
+  "updated_at": "2026-11-01T22:40:15.551144+00:00",
   "market": "Dukascopy USA500.IDX/USD CFD index (not exchange futures or ^GSPC)",
   "method": "Dukascopy USA500 BID M1 OHLC; pre-release close to 1/5/15/30-minute highs and lows in index points; no tick-level ordering or causality inference",
   "eligible_count": 35,
-  "missing_count": 26,
+  "missing_count": 24,
   "missing_events": [
     {
       "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
@@ -49,16 +49,6 @@
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
       "category": "FOMC",
       "release_time_utc": "2026-06-17T18:00:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/ppi_06112026.htm",
-      "category": "PPI",
-      "release_time_utc": "2026-06-11T12:30:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/cpi_06102026.htm",
-      "category": "CPI",
-      "release_time_utc": "2026-06-10T12:30:00+00:00"
     },
     {
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
@@ -479,42 +469,138 @@
       "source": "Dukascopy USA500IDXUSD BID M1",
       "unit": "index points",
       "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_06112026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand advances 1.1% in May; goods rise 2.8%, services increase 0.3%",
+      "release_time_utc": "2026-06-11T12:30:00+00:00",
+      "baseline": 7297.745,
+      "spikes": {
+        "1": {
+          "up_points": 6.4,
+          "down_points": 6.997,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 6.4,
+          "down_points": 18.097,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 6.4,
+          "down_points": 18.097,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 12.891,
+          "down_points": 18.097,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 3.591,
+        "5": -9.703,
+        "15": -1.691,
+        "30": 9.9
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_06102026.htm",
+      "category": "CPI",
+      "title": "CPI for all items rises 0.5% in May; gasoline and shelter up",
+      "release_time_utc": "2026-06-10T12:30:00+00:00",
+      "baseline": 7329.533,
+      "spikes": {
+        "1": {
+          "up_points": 28.518,
+          "down_points": 0,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 28.518,
+          "down_points": 1.994,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 28.518,
+          "down_points": 1.994,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 28.612,
+          "down_points": 1.994,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 9.715,
+        "5": 15.721,
+        "15": 21.4,
+        "30": 12.566
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
     }
   ],
   "checks": {
-    "2026-10-29": "bars=1440, matched=3",
-    "2026-10-28": "bars=1440, matched=1",
-    "2026-10-15": "bars=1440, matched=1",
-    "2026-10-14": "TimeoutError: The read operation timed out",
-    "2026-10-07": "TimeoutError: The read operation timed out",
-    "2026-09-16": "bars=1440, matched=1",
-    "2026-09-11": "bars=1440, matched=1",
-    "2026-09-10": "TimeoutError: The read operation timed out",
-    "2026-08-19": "HTTPError: HTTP Error 503: Service Unavailable",
-    "2026-08-13": "bars=1440, matched=1",
-    "2026-08-12": "bars=1440, matched=1",
-    "2026-07-29": "TimeoutError: The read operation timed out"
+    "2026-10-14": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+    "2026-10-07": "URLError: <urlopen error timed out>",
+    "2026-09-10": "URLError: <urlopen error timed out>",
+    "2026-08-19": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
+    "2026-07-29": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+    "2026-07-15": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
+    "2026-07-14": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
+    "2026-07-08": "URLError: <urlopen error timed out>",
+    "2026-06-17": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+    "2026-06-11": "bars=1440, matched=1",
+    "2026-06-10": "bars=1440, matched=1",
+    "2026-05-20": "URLError: <urlopen error timed out>"
   },
   "retry": {
     "2026-10-14": {
-      "last_error": "TimeoutError: The read operation timed out",
-      "last_attempt": "2026-11-01T19:36:02.250441+00:00"
+      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
     },
     "2026-10-07": {
-      "last_error": "TimeoutError: The read operation timed out",
-      "last_attempt": "2026-11-01T19:36:02.250441+00:00"
+      "last_error": "URLError: <urlopen error timed out>",
+      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
     },
     "2026-09-10": {
-      "last_error": "TimeoutError: The read operation timed out",
-      "last_attempt": "2026-11-01T19:36:02.250441+00:00"
+      "last_error": "URLError: <urlopen error timed out>",
+      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
     },
     "2026-08-19": {
-      "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
-      "last_attempt": "2026-11-01T19:36:02.250441+00:00"
+      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
+      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
     },
     "2026-07-29": {
-      "last_error": "TimeoutError: The read operation timed out",
-      "last_attempt": "2026-11-01T19:36:02.250441+00:00"
+      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
+    },
+    "2026-07-15": {
+      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
+      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
+    },
+    "2026-07-14": {
+      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
+      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
+    },
+    "2026-07-08": {
+      "last_error": "URLError: <urlopen error timed out>",
+      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
+    },
+    "2026-06-17": {
+      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
+    },
+    "2026-05-20": {
+      "last_error": "URLError: <urlopen error timed out>",
+      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
     }
   }
 }
