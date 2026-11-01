@@ -5,6 +5,7 @@ on:
     paths:
       - 'scripts/update_news.py'
       - 'scripts/update_reactions.py'
+      - 'scripts/update_sp500.py'
       - '.github/workflows/update-news.yml'
   schedule:
     - cron: "7,22,37,52 * * * *"
@@ -33,6 +34,8 @@ jobs:
         env:
           GOLDPRICE_API_KEY: ${{ secrets.GOLDPRICE_API_KEY }}
         run: python scripts/update_reactions.py
+      - name: Calculate S&P 500 historical reactions
+        run: python scripts/update_sp500.py
       - name: Report historical data health
         if: always()
         run: |
@@ -71,7 +74,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add news.json reactions.json
+          git add news.json reactions.json sp500-reactions.json
           if ! git diff --cached --quiet; then
             git commit -m "Update official economic news"
             git pull --rebase -X ours origin main
