@@ -1,48 +1,520 @@
 {
-  "updated_at": "2026-11-01T18:58:29.981909+00:00",
-  "market": "S&P 500 cash index (^GSPC), not broker US500 CFD",
-  "method": "Yahoo Finance ^GSPC 1-minute OHLC, short rolling history; pre-release close to 1/5/15/30-minute highs and lows, index points",
+  "updated_at": "2026-11-01T19:36:02.250441+00:00",
+  "market": "Dukascopy USA500.IDX/USD CFD index (not exchange futures or ^GSPC)",
+  "method": "Dukascopy USA500 BID M1 OHLC; pre-release close to 1/5/15/30-minute highs and lows in index points; no tick-level ordering or causality inference",
+  "eligible_count": 35,
+  "missing_count": 26,
+  "missing_events": [
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "category": "CPI",
+      "release_time_utc": "2026-10-14T12:30:00+00:00"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
+      "category": "FOMC",
+      "release_time_utc": "2026-10-07T18:00:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_09102026.htm",
+      "category": "PPI",
+      "release_time_utc": "2026-09-10T12:30:00+00:00"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260819a.htm",
+      "category": "FOMC",
+      "release_time_utc": "2026-08-19T18:00:00+00:00"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+      "category": "FOMC",
+      "release_time_utc": "2026-07-29T18:00:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_07152026.htm",
+      "category": "PPI",
+      "release_time_utc": "2026-07-15T12:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_07142026.htm",
+      "category": "CPI",
+      "release_time_utc": "2026-07-14T12:30:00+00:00"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260708a.htm",
+      "category": "FOMC",
+      "release_time_utc": "2026-07-08T18:00:00+00:00"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+      "category": "FOMC",
+      "release_time_utc": "2026-06-17T18:00:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_06112026.htm",
+      "category": "PPI",
+      "release_time_utc": "2026-06-11T12:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_06102026.htm",
+      "category": "CPI",
+      "release_time_utc": "2026-06-10T12:30:00+00:00"
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
+      "category": "FOMC",
+      "release_time_utc": "2026-05-20T18:00:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_05132026.htm",
+      "category": "PPI",
+      "release_time_utc": "2026-05-13T12:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_05122026.htm",
+      "category": "CPI",
+      "release_time_utc": "2026-05-12T12:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_04142026.htm",
+      "category": "PPI",
+      "release_time_utc": "2026-04-14T12:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_04102026.htm",
+      "category": "CPI",
+      "release_time_utc": "2026-04-10T12:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_03182026.htm",
+      "category": "PPI",
+      "release_time_utc": "2026-03-18T12:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_03112026.htm",
+      "category": "CPI",
+      "release_time_utc": "2026-03-11T12:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_02272026.htm",
+      "category": "PPI",
+      "release_time_utc": "2026-02-27T13:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_02132026.htm",
+      "category": "CPI",
+      "release_time_utc": "2026-02-13T13:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_01302026.htm",
+      "category": "PPI",
+      "release_time_utc": "2026-01-30T13:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_01142026.htm",
+      "category": "PPI",
+      "release_time_utc": "2026-01-14T13:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_01132026.htm",
+      "category": "CPI",
+      "release_time_utc": "2026-01-13T13:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_12182025.htm",
+      "category": "CPI",
+      "release_time_utc": "2025-12-18T13:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_11252025.htm",
+      "category": "PPI",
+      "release_time_utc": "2025-11-25T13:30:00+00:00"
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_10242025.htm",
+      "category": "CPI",
+      "release_time_utc": "2025-10-24T12:30:00+00:00"
+    }
+  ],
+  "complete": false,
   "items": [
+    {
+      "url": "https://www.bea.gov/data/gdp/gross-domestic-product#2026-10-29",
+      "category": "GDP",
+      "title": "US GDP Q3 advance estimate",
+      "release_time_utc": "2026-10-29T12:30:00+00:00",
+      "baseline": 7721.542,
+      "spikes": {
+        "1": {
+          "up_points": 5.256,
+          "down_points": 1.259,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 5.256,
+          "down_points": 6.379,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 5.256,
+          "down_points": 10.879,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 5.256,
+          "down_points": 10.879,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 1.377,
+        "5": -5.126,
+        "15": -4.126,
+        "30": 2.371
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bea.gov/data/personal-consumption-expenditures-price-index#2026-10-29",
+      "category": "PCE",
+      "title": "US personal income and PCE inflation September",
+      "release_time_utc": "2026-10-29T12:30:00+00:00",
+      "baseline": 7721.542,
+      "spikes": {
+        "1": {
+          "up_points": 5.256,
+          "down_points": 1.259,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 5.256,
+          "down_points": 6.379,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 5.256,
+          "down_points": 10.879,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 5.256,
+          "down_points": 10.879,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 1.377,
+        "5": -5.126,
+        "15": -4.126,
+        "30": 2.371
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.dol.gov/agencies/eta/ui-data#2026-10-29",
+      "category": "CLAIMS",
+      "title": "US initial unemployment claims",
+      "release_time_utc": "2026-10-29T12:30:00+00:00",
+      "baseline": 7721.542,
+      "spikes": {
+        "1": {
+          "up_points": 5.256,
+          "down_points": 1.259,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 5.256,
+          "down_points": 6.379,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 5.256,
+          "down_points": 10.879,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 5.256,
+          "down_points": 10.879,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 1.377,
+        "5": -5.126,
+        "15": -4.126,
+        "30": 2.371
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
     {
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
       "category": "FOMC",
       "title": "Federal Reserve issues FOMC statement",
       "release_time_utc": "2026-10-28T18:00:00+00:00",
-      "baseline": 7738.02001953125,
+      "baseline": 7736.954,
       "spikes": {
         "1": {
-          "up_points": 6.31,
-          "down_points": 5.45,
+          "up_points": 7.441,
+          "down_points": 5.885,
           "first_minute_direction": "DOWN"
         },
         "5": {
-          "up_points": 6.31,
-          "down_points": 5.45,
+          "up_points": 7.441,
+          "down_points": 5.885,
           "first_minute_direction": "DOWN"
         },
         "15": {
-          "up_points": 6.31,
-          "down_points": 10.65,
+          "up_points": 7.441,
+          "down_points": 10.859,
           "first_minute_direction": "DOWN"
         },
         "30": {
-          "up_points": 6.31,
-          "down_points": 14.49,
+          "up_points": 7.441,
+          "down_points": 14.0,
           "first_minute_direction": "DOWN"
         }
       },
       "moves": {
-        "1": -4.48,
-        "5": -3.92,
-        "15": -8.66,
-        "30": -4.2
+        "1": -2.998,
+        "5": -3.798,
+        "15": -7.808,
+        "30": -2.978
       },
-      "source": "Yahoo Finance ^GSPC M1",
+      "source": "Dukascopy USA500IDXUSD BID M1",
       "unit": "index points",
-      "method_version": 1
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_10152026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand increases 1.3% in September; goods advance 2.6%, services rise 0.8%",
+      "release_time_utc": "2026-10-15T12:30:00+00:00",
+      "baseline": 7702.848,
+      "spikes": {
+        "1": {
+          "up_points": 0.75,
+          "down_points": 22.394,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 0.75,
+          "down_points": 22.394,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 1.727,
+          "down_points": 22.394,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 1.727,
+          "down_points": 22.394,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -11.267,
+        "5": -6.782,
+        "15": -5.02,
+        "30": -6.02
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "category": "FOMC",
+      "title": "Federal Reserve issues FOMC statement",
+      "release_time_utc": "2026-09-16T18:00:00+00:00",
+      "baseline": 7612.376,
+      "spikes": {
+        "1": {
+          "up_points": 6.612,
+          "down_points": 6.611,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 6.612,
+          "down_points": 14.338,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 10.026,
+          "down_points": 14.338,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 10.026,
+          "down_points": 14.338,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -4.971,
+        "5": 0.28,
+        "15": -2.241,
+        "30": -4.732
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_09112026.htm",
+      "category": "CPI",
+      "title": "CPI for all items increases 0.4% in August; gasoline rises",
+      "release_time_utc": "2026-09-11T12:30:00+00:00",
+      "baseline": 7649.139,
+      "spikes": {
+        "1": {
+          "up_points": 1.512,
+          "down_points": 27.256,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 1.512,
+          "down_points": 27.514,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 1.512,
+          "down_points": 27.514,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 24.04,
+          "down_points": 27.514,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -25.767,
+        "5": -10.523,
+        "15": -6.71,
+        "30": 22.727
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_08132026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand unchanged in July; services advance 0.2%, goods fall 0.7%",
+      "release_time_utc": "2026-08-13T12:30:00+00:00",
+      "baseline": 7761.798,
+      "spikes": {
+        "1": {
+          "up_points": 6.621,
+          "down_points": 1.699,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 6.621,
+          "down_points": 4.994,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 6.621,
+          "down_points": 4.994,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 6.621,
+          "down_points": 4.994,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -0.497,
+        "5": -1.12,
+        "15": 0.874,
+        "30": 5.136
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_08122026.htm",
+      "category": "CPI",
+      "title": "CPI for all items increases 0.1% in July; shelter rises",
+      "release_time_utc": "2026-08-12T12:30:00+00:00",
+      "baseline": 7758.668,
+      "spikes": {
+        "1": {
+          "up_points": 5.247,
+          "down_points": 19.509,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 5.247,
+          "down_points": 19.509,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 6.971,
+          "down_points": 19.509,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 6.971,
+          "down_points": 19.509,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -9.349,
+        "5": -1.282,
+        "15": 2.841,
+        "30": 4.718
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
     }
   ],
   "checks": {
-    "feed": "2731 valid ^GSPC M1 bars"
+    "2026-10-29": "bars=1440, matched=3",
+    "2026-10-28": "bars=1440, matched=1",
+    "2026-10-15": "bars=1440, matched=1",
+    "2026-10-14": "TimeoutError: The read operation timed out",
+    "2026-10-07": "TimeoutError: The read operation timed out",
+    "2026-09-16": "bars=1440, matched=1",
+    "2026-09-11": "bars=1440, matched=1",
+    "2026-09-10": "TimeoutError: The read operation timed out",
+    "2026-08-19": "HTTPError: HTTP Error 503: Service Unavailable",
+    "2026-08-13": "bars=1440, matched=1",
+    "2026-08-12": "bars=1440, matched=1",
+    "2026-07-29": "TimeoutError: The read operation timed out"
+  },
+  "retry": {
+    "2026-10-14": {
+      "last_error": "TimeoutError: The read operation timed out",
+      "last_attempt": "2026-11-01T19:36:02.250441+00:00"
+    },
+    "2026-10-07": {
+      "last_error": "TimeoutError: The read operation timed out",
+      "last_attempt": "2026-11-01T19:36:02.250441+00:00"
+    },
+    "2026-09-10": {
+      "last_error": "TimeoutError: The read operation timed out",
+      "last_attempt": "2026-11-01T19:36:02.250441+00:00"
+    },
+    "2026-08-19": {
+      "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "last_attempt": "2026-11-01T19:36:02.250441+00:00"
+    },
+    "2026-07-29": {
+      "last_error": "TimeoutError: The read operation timed out",
+      "last_attempt": "2026-11-01T19:36:02.250441+00:00"
+    }
   }
 }
