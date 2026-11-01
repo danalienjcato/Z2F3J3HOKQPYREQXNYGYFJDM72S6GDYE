@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T10:14:27.725382+00:00",
+  "updated_at": "2026-11-01T14:18:39.759830+00:00",
   "market": "S&P 500 cash index (^GSPC), not broker US500 CFD",
   "method": "Yahoo Finance ^GSPC 1-minute OHLC, short rolling history; pre-release close to 1/5/15/30-minute highs and lows, index points",
   "items": [
