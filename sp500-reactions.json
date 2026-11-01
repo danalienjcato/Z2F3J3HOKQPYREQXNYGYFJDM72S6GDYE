@@ -1,0 +1,48 @@
+{
+  "updated_at": "2026-11-01T10:14:27.725382+00:00",
+  "market": "S&P 500 cash index (^GSPC), not broker US500 CFD",
+  "method": "Yahoo Finance ^GSPC 1-minute OHLC, short rolling history; pre-release close to 1/5/15/30-minute highs and lows, index points",
+  "items": [
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "category": "FOMC",
+      "title": "Federal Reserve issues FOMC statement",
+      "release_time_utc": "2026-10-28T18:00:00+00:00",
+      "baseline": 7738.02001953125,
+      "spikes": {
+        "1": {
+          "up_points": 6.31,
+          "down_points": 5.45,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 6.31,
+          "down_points": 5.45,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 6.31,
+          "down_points": 10.65,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 6.31,
+          "down_points": 14.49,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -4.48,
+        "5": -3.92,
+        "15": -8.66,
+        "30": -4.2
+      },
+      "source": "Yahoo Finance ^GSPC M1",
+      "unit": "index points",
+      "method_version": 1
+    }
+  ],
+  "checks": {
+    "feed": "2731 valid ^GSPC M1 bars"
+  }
+}
