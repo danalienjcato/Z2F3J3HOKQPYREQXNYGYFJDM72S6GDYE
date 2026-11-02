@@ -1,35 +1,10 @@
 {
-  "updated_at": "2026-11-01T22:40:15.551144+00:00",
+  "updated_at": "2026-11-02T01:51:34.576205+00:00",
   "market": "Dukascopy USA500.IDX/USD CFD index (not exchange futures or ^GSPC)",
   "method": "Dukascopy USA500 BID M1 OHLC; pre-release close to 1/5/15/30-minute highs and lows in index points; no tick-level ordering or causality inference",
   "eligible_count": 35,
-  "missing_count": 24,
+  "missing_count": 17,
   "missing_events": [
-    {
-      "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
-      "category": "CPI",
-      "release_time_utc": "2026-10-14T12:30:00+00:00"
-    },
-    {
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
-      "category": "FOMC",
-      "release_time_utc": "2026-10-07T18:00:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/ppi_09102026.htm",
-      "category": "PPI",
-      "release_time_utc": "2026-09-10T12:30:00+00:00"
-    },
-    {
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260819a.htm",
-      "category": "FOMC",
-      "release_time_utc": "2026-08-19T18:00:00+00:00"
-    },
-    {
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
-      "category": "FOMC",
-      "release_time_utc": "2026-07-29T18:00:00+00:00"
-    },
     {
       "url": "https://www.bls.gov/news.release/archives/ppi_07152026.htm",
       "category": "PPI",
@@ -44,16 +19,6 @@
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260708a.htm",
       "category": "FOMC",
       "release_time_utc": "2026-07-08T18:00:00+00:00"
-    },
-    {
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
-      "category": "FOMC",
-      "release_time_utc": "2026-06-17T18:00:00+00:00"
-    },
-    {
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
-      "category": "FOMC",
-      "release_time_utc": "2026-05-20T18:00:00+00:00"
     },
     {
       "url": "https://www.bls.gov/news.release/archives/ppi_05132026.htm",
@@ -319,6 +284,82 @@
       "method_version": 2
     },
     {
+      "url": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "category": "CPI",
+      "title": "CPI for all items increases 0.6% in September; gasoline rises",
+      "release_time_utc": "2026-10-14T12:30:00+00:00",
+      "baseline": 7826.006,
+      "spikes": {
+        "1": {
+          "up_points": 0,
+          "down_points": 0,
+          "first_minute_direction": "FLAT"
+        },
+        "5": {
+          "up_points": 0,
+          "down_points": 40.732,
+          "first_minute_direction": "FLAT"
+        },
+        "15": {
+          "up_points": 0,
+          "down_points": 49.747,
+          "first_minute_direction": "FLAT"
+        },
+        "30": {
+          "up_points": 0,
+          "down_points": 51.753,
+          "first_minute_direction": "FLAT"
+        }
+      },
+      "moves": {
+        "1": 0.0,
+        "5": -39.124,
+        "15": -45.741,
+        "30": -49.253
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
+      "category": "FOMC",
+      "title": "Minutes of the Federal Open Market Committee, September 15-16, 2026",
+      "release_time_utc": "2026-10-07T18:00:00+00:00",
+      "baseline": 7800.768,
+      "spikes": {
+        "1": {
+          "up_points": 0.245,
+          "down_points": 1.499,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 1.838,
+          "down_points": 3.71,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 5.06,
+          "down_points": 3.71,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 5.06,
+          "down_points": 3.71,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -0.993,
+        "5": 1.1,
+        "15": 0.707,
+        "30": 2.115
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
       "category": "FOMC",
       "title": "Federal Reserve issues FOMC statement",
@@ -389,6 +430,82 @@
         "5": -10.523,
         "15": -6.71,
         "30": 22.727
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_09102026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand moves up 0.4% in August; goods advance 1.1%, services rise 0.1%",
+      "release_time_utc": "2026-09-10T12:30:00+00:00",
+      "baseline": 7619.942,
+      "spikes": {
+        "1": {
+          "up_points": 3.471,
+          "down_points": 5.529,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 3.471,
+          "down_points": 20.523,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 3.471,
+          "down_points": 27.014,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 3.471,
+          "down_points": 28.267,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -4.514,
+        "5": -20.279,
+        "15": -23.406,
+        "30": -24.523
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260819a.htm",
+      "category": "FOMC",
+      "title": "Minutes of the Federal Open Market Committee, July 28\u201329, 2026",
+      "release_time_utc": "2026-08-19T18:00:00+00:00",
+      "baseline": 7714.955,
+      "spikes": {
+        "1": {
+          "up_points": 3.483,
+          "down_points": 1.32,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 10.194,
+          "down_points": 1.32,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 10.194,
+          "down_points": 5.51,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 10.194,
+          "down_points": 5.51,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 2.974,
+        "5": 6.009,
+        "15": -0.776,
+        "30": 0.208
       },
       "source": "Dukascopy USA500IDXUSD BID M1",
       "unit": "index points",
@@ -471,6 +588,82 @@
       "method_version": 2
     },
     {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+      "category": "FOMC",
+      "title": "Federal Reserve issues FOMC statement",
+      "release_time_utc": "2026-07-29T18:00:00+00:00",
+      "baseline": 7385.939,
+      "spikes": {
+        "1": {
+          "up_points": 27.022,
+          "down_points": 0.295,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 32.842,
+          "down_points": 0.295,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 32.842,
+          "down_points": 0.295,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 32.842,
+          "down_points": 0.295,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 25.806,
+        "5": 19.109,
+        "15": 11.64,
+        "30": 10.456
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+      "category": "FOMC",
+      "title": "Federal Reserve issues FOMC statement",
+      "release_time_utc": "2026-06-17T18:00:00+00:00",
+      "baseline": 7518.872,
+      "spikes": {
+        "1": {
+          "up_points": 0,
+          "down_points": 33.261,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 0,
+          "down_points": 62.872,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 0,
+          "down_points": 74.597,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 0,
+          "down_points": 74.597,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -31.821,
+        "5": -57.024,
+        "15": -42.758,
+        "30": -46.104
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
       "url": "https://www.bls.gov/news.release/archives/ppi_06112026.htm",
       "category": "PPI",
       "title": "PPI for final demand advances 1.1% in May; goods rise 2.8%, services increase 0.3%",
@@ -545,62 +738,80 @@
       "source": "Dukascopy USA500IDXUSD BID M1",
       "unit": "index points",
       "method_version": 2
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260520a.htm",
+      "category": "FOMC",
+      "title": "Minutes of the Federal Open Market Committee, April 28-29, 2026",
+      "release_time_utc": "2026-05-20T18:00:00+00:00",
+      "baseline": 7417.039,
+      "spikes": {
+        "1": {
+          "up_points": 1.606,
+          "down_points": 4.994,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 3.497,
+          "down_points": 4.994,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 6.194,
+          "down_points": 4.994,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 6.194,
+          "down_points": 4.994,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 1.606,
+        "5": 2.197,
+        "15": 1.76,
+        "30": 2.26
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
     }
   ],
   "checks": {
-    "2026-10-14": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
-    "2026-10-07": "URLError: <urlopen error timed out>",
-    "2026-09-10": "URLError: <urlopen error timed out>",
-    "2026-08-19": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
-    "2026-07-29": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
-    "2026-07-15": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
-    "2026-07-14": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
+    "2026-10-14": "bars=1440, matched=1",
+    "2026-10-07": "bars=1440, matched=1",
+    "2026-09-10": "bars=1440, matched=1",
+    "2026-08-19": "bars=1440, matched=1",
+    "2026-07-29": "bars=1440, matched=1",
+    "2026-07-15": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+    "2026-07-14": "URLError: <urlopen error timed out>",
     "2026-07-08": "URLError: <urlopen error timed out>",
-    "2026-06-17": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
-    "2026-06-11": "bars=1440, matched=1",
-    "2026-06-10": "bars=1440, matched=1",
-    "2026-05-20": "URLError: <urlopen error timed out>"
+    "2026-06-17": "bars=1440, matched=1",
+    "2026-05-20": "bars=1440, matched=1",
+    "2026-05-13": "URLError: <urlopen error timed out>",
+    "2026-05-12": "URLError: <urlopen error timed out>"
   },
   "retry": {
-    "2026-10-14": {
-      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
-      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
-    },
-    "2026-10-07": {
-      "last_error": "URLError: <urlopen error timed out>",
-      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
-    },
-    "2026-09-10": {
-      "last_error": "URLError: <urlopen error timed out>",
-      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
-    },
-    "2026-08-19": {
-      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
-      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
-    },
-    "2026-07-29": {
-      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
-      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
-    },
     "2026-07-15": {
-      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
-      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
+      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+      "last_attempt": "2026-11-02T01:51:34.576205+00:00"
     },
     "2026-07-14": {
-      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
-      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
+      "last_error": "URLError: <urlopen error timed out>",
+      "last_attempt": "2026-11-02T01:51:34.576205+00:00"
     },
     "2026-07-08": {
       "last_error": "URLError: <urlopen error timed out>",
-      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
+      "last_attempt": "2026-11-02T01:51:34.576205+00:00"
     },
-    "2026-06-17": {
-      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
-      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
-    },
-    "2026-05-20": {
+    "2026-05-13": {
       "last_error": "URLError: <urlopen error timed out>",
-      "last_attempt": "2026-11-01T22:40:15.551144+00:00"
+      "last_attempt": "2026-11-02T01:51:34.576205+00:00"
+    },
+    "2026-05-12": {
+      "last_error": "URLError: <urlopen error timed out>",
+      "last_attempt": "2026-11-02T01:51:34.576205+00:00"
     }
   }
 }
