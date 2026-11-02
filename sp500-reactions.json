@@ -1,65 +1,10 @@
 {
-  "updated_at": "2026-11-02T01:51:34.576205+00:00",
+  "updated_at": "2026-11-02T08:24:46.695364+00:00",
   "market": "Dukascopy USA500.IDX/USD CFD index (not exchange futures or ^GSPC)",
   "method": "Dukascopy USA500 BID M1 OHLC; pre-release close to 1/5/15/30-minute highs and lows in index points; no tick-level ordering or causality inference",
   "eligible_count": 35,
-  "missing_count": 17,
+  "missing_count": 6,
   "missing_events": [
-    {
-      "url": "https://www.bls.gov/news.release/archives/ppi_07152026.htm",
-      "category": "PPI",
-      "release_time_utc": "2026-07-15T12:30:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/cpi_07142026.htm",
-      "category": "CPI",
-      "release_time_utc": "2026-07-14T12:30:00+00:00"
-    },
-    {
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260708a.htm",
-      "category": "FOMC",
-      "release_time_utc": "2026-07-08T18:00:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/ppi_05132026.htm",
-      "category": "PPI",
-      "release_time_utc": "2026-05-13T12:30:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/cpi_05122026.htm",
-      "category": "CPI",
-      "release_time_utc": "2026-05-12T12:30:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/ppi_04142026.htm",
-      "category": "PPI",
-      "release_time_utc": "2026-04-14T12:30:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/cpi_04102026.htm",
-      "category": "CPI",
-      "release_time_utc": "2026-04-10T12:30:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/ppi_03182026.htm",
-      "category": "PPI",
-      "release_time_utc": "2026-03-18T12:30:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/cpi_03112026.htm",
-      "category": "CPI",
-      "release_time_utc": "2026-03-11T12:30:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/ppi_02272026.htm",
-      "category": "PPI",
-      "release_time_utc": "2026-02-27T13:30:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/cpi_02132026.htm",
-      "category": "CPI",
-      "release_time_utc": "2026-02-13T13:30:00+00:00"
-    },
     {
       "url": "https://www.bls.gov/news.release/archives/ppi_01302026.htm",
       "category": "PPI",
@@ -626,6 +571,120 @@
       "method_version": 2
     },
     {
+      "url": "https://www.bls.gov/news.release/archives/ppi_07152026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand declines 0.3% in June; goods fall 1.4%, services increase 0.2%",
+      "release_time_utc": "2026-07-15T12:30:00+00:00",
+      "baseline": 7550.373,
+      "spikes": {
+        "1": {
+          "up_points": 10.816,
+          "down_points": 0.75,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 11.498,
+          "down_points": 0.75,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 18.736,
+          "down_points": 0.75,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 19.98,
+          "down_points": 0.75,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 7.621,
+        "5": 10.356,
+        "15": 15.992,
+        "30": 16.745
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_07142026.htm",
+      "category": "CPI",
+      "title": "CPI for all items falls 0.4% in June; gasoline down",
+      "release_time_utc": "2026-07-14T12:30:00+00:00",
+      "baseline": 7516.662,
+      "spikes": {
+        "1": {
+          "up_points": 48.887,
+          "down_points": 1.626,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 52.074,
+          "down_points": 1.626,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 52.074,
+          "down_points": 1.626,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 52.074,
+          "down_points": 1.626,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 47.577,
+        "5": 33.577,
+        "15": 25.722,
+        "30": 17.137
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260708a.htm",
+      "category": "FOMC",
+      "title": "Minutes of the Federal Open Market Committee, June 16-17, 2026",
+      "release_time_utc": "2026-07-08T18:00:00+00:00",
+      "baseline": 7470.924,
+      "spikes": {
+        "1": {
+          "up_points": 4.605,
+          "down_points": 3.962,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 10.008,
+          "down_points": 3.962,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 10.465,
+          "down_points": 3.962,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 10.465,
+          "down_points": 3.962,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 2.58,
+        "5": 8.422,
+        "15": 8.649,
+        "30": 2.79
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
       "category": "FOMC",
       "title": "Federal Reserve issues FOMC statement",
@@ -776,42 +835,330 @@
       "source": "Dukascopy USA500IDXUSD BID M1",
       "unit": "index points",
       "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_05132026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand advances 1.4% in April; services rise 1.2%, goods increase 2.0%",
+      "release_time_utc": "2026-05-13T12:30:00+00:00",
+      "baseline": 7415.551,
+      "spikes": {
+        "1": {
+          "up_points": 0,
+          "down_points": 14.218,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 0,
+          "down_points": 18.209,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 0,
+          "down_points": 22.209,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 0,
+          "down_points": 22.209,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -12.806,
+        "5": -14.215,
+        "15": -16.215,
+        "30": -17.703
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_05122026.htm",
+      "category": "CPI",
+      "title": "CPI for all items rises 0.6% in April; shelter and gasoline up",
+      "release_time_utc": "2026-05-12T12:30:00+00:00",
+      "baseline": 7382.848,
+      "spikes": {
+        "1": {
+          "up_points": 4.9,
+          "down_points": 5.203,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 4.9,
+          "down_points": 7.694,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 9.794,
+          "down_points": 7.694,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 14.051,
+          "down_points": 7.694,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -1.294,
+        "5": 1.794,
+        "15": 7.806,
+        "30": 12.894
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_04142026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand advances 0.5% in March; goods rise 1.6%, services unchanged",
+      "release_time_utc": "2026-04-14T12:30:00+00:00",
+      "baseline": 6906.533,
+      "spikes": {
+        "1": {
+          "up_points": 4.706,
+          "down_points": 2.734,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 4.706,
+          "down_points": 5.094,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 4.706,
+          "down_points": 5.094,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 4.706,
+          "down_points": 7.8,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -2.479,
+        "5": -2.791,
+        "15": -3.494,
+        "30": -4.488
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_04102026.htm",
+      "category": "CPI",
+      "title": "CPI for all items rises 0.9% in March; gasoline up",
+      "release_time_utc": "2026-04-10T12:30:00+00:00",
+      "baseline": 6834.636,
+      "spikes": {
+        "1": {
+          "up_points": 11.247,
+          "down_points": 1.187,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 11.247,
+          "down_points": 1.187,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 11.247,
+          "down_points": 3.02,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 11.247,
+          "down_points": 3.303,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 5.35,
+        "5": -0.761,
+        "15": -0.482,
+        "30": -1.937
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_03182026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand advances 0.7% in February; services rise 0.5%, goods increase 1.1%",
+      "release_time_utc": "2026-03-18T12:30:00+00:00",
+      "baseline": 6719.539,
+      "spikes": {
+        "1": {
+          "up_points": 0.315,
+          "down_points": 11.394,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 0.315,
+          "down_points": 19.9,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 0.315,
+          "down_points": 31.403,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 0.315,
+          "down_points": 39.791,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -10.194,
+        "5": -16.14,
+        "15": -27.688,
+        "30": -36.891
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_03112026.htm",
+      "category": "CPI",
+      "title": "CPI for all items rises 0.3% in February; shelter up",
+      "release_time_utc": "2026-03-11T12:30:00+00:00",
+      "baseline": 6783.733,
+      "spikes": {
+        "1": {
+          "up_points": 10.0,
+          "down_points": 3.6,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 10.0,
+          "down_points": 15.9,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 10.0,
+          "down_points": 20.797,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 10.0,
+          "down_points": 25.0,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -1.882,
+        "5": -15.082,
+        "15": -18.088,
+        "30": -17.485
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_02272026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand advances 0.5% in January; services rise 0.8%, goods decrease 0.3%",
+      "release_time_utc": "2026-02-27T13:30:00+00:00",
+      "baseline": 6858.251,
+      "spikes": {
+        "1": {
+          "up_points": 0,
+          "down_points": 14.006,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 0,
+          "down_points": 14.006,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 0,
+          "down_points": 17.218,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 0,
+          "down_points": 17.218,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -7.912,
+        "5": -11.918,
+        "15": -10.715,
+        "30": -3.203
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_02132026.htm",
+      "category": "CPI",
+      "title": "CPI for all items rises 0.2% in January; shelter up",
+      "release_time_utc": "2026-02-13T13:30:00+00:00",
+      "baseline": 6821.242,
+      "spikes": {
+        "1": {
+          "up_points": 25.491,
+          "down_points": 0.509,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 25.491,
+          "down_points": 0.509,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 25.491,
+          "down_points": 0.509,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 25.491,
+          "down_points": 0.509,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 20.794,
+        "5": 18.106,
+        "15": 15.157,
+        "30": 17.091
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
     }
   ],
   "checks": {
-    "2026-10-14": "bars=1440, matched=1",
-    "2026-10-07": "bars=1440, matched=1",
-    "2026-09-10": "bars=1440, matched=1",
-    "2026-08-19": "bars=1440, matched=1",
-    "2026-07-29": "bars=1440, matched=1",
-    "2026-07-15": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
-    "2026-07-14": "URLError: <urlopen error timed out>",
-    "2026-07-08": "URLError: <urlopen error timed out>",
-    "2026-06-17": "bars=1440, matched=1",
-    "2026-05-20": "bars=1440, matched=1",
-    "2026-05-13": "URLError: <urlopen error timed out>",
-    "2026-05-12": "URLError: <urlopen error timed out>"
+    "2026-07-15": "bars=1440, matched=1",
+    "2026-07-14": "bars=1440, matched=1",
+    "2026-07-08": "bars=1440, matched=1",
+    "2026-05-13": "bars=1440, matched=1",
+    "2026-05-12": "bars=1440, matched=1",
+    "2026-04-14": "bars=1440, matched=1",
+    "2026-04-10": "bars=1440, matched=1",
+    "2026-03-18": "bars=1440, matched=1",
+    "2026-03-11": "bars=1440, matched=1",
+    "2026-02-27": "bars=1440, matched=1",
+    "2026-02-13": "bars=1440, matched=1",
+    "2026-01-30": "TimeoutError: The read operation timed out"
   },
   "retry": {
-    "2026-07-15": {
-      "last_error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
-      "last_attempt": "2026-11-02T01:51:34.576205+00:00"
-    },
-    "2026-07-14": {
-      "last_error": "URLError: <urlopen error timed out>",
-      "last_attempt": "2026-11-02T01:51:34.576205+00:00"
-    },
-    "2026-07-08": {
-      "last_error": "URLError: <urlopen error timed out>",
-      "last_attempt": "2026-11-02T01:51:34.576205+00:00"
-    },
-    "2026-05-13": {
-      "last_error": "URLError: <urlopen error timed out>",
-      "last_attempt": "2026-11-02T01:51:34.576205+00:00"
-    },
-    "2026-05-12": {
-      "last_error": "URLError: <urlopen error timed out>",
-      "last_attempt": "2026-11-02T01:51:34.576205+00:00"
+    "2026-01-30": {
+      "last_error": "TimeoutError: The read operation timed out",
+      "last_attempt": "2026-11-02T08:24:46.695364+00:00"
     }
   }
 }
