@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T08:24:46.695364+00:00",
+  "updated_at": "2026-11-02T18:45:05.524586+00:00",
   "market": "Dukascopy USA500.IDX/USD CFD index (not exchange futures or ^GSPC)",
   "method": "Dukascopy USA500 BID M1 OHLC; pre-release close to 1/5/15/30-minute highs and lows in index points; no tick-level ordering or causality inference",
   "eligible_count": 35,
@@ -1142,23 +1142,37 @@
     }
   ],
   "checks": {
-    "2026-07-15": "bars=1440, matched=1",
-    "2026-07-14": "bars=1440, matched=1",
-    "2026-07-08": "bars=1440, matched=1",
-    "2026-05-13": "bars=1440, matched=1",
-    "2026-05-12": "bars=1440, matched=1",
-    "2026-04-14": "bars=1440, matched=1",
-    "2026-04-10": "bars=1440, matched=1",
-    "2026-03-18": "bars=1440, matched=1",
-    "2026-03-11": "bars=1440, matched=1",
-    "2026-02-27": "bars=1440, matched=1",
-    "2026-02-13": "bars=1440, matched=1",
-    "2026-01-30": "TimeoutError: The read operation timed out"
+    "2026-01-30": "TimeoutError: The read operation timed out",
+    "2026-01-14": "TimeoutError: The read operation timed out",
+    "2026-01-13": "HTTPError: HTTP Error 503: Service Unavailable",
+    "2025-12-18": "HTTPError: HTTP Error 503: Service Unavailable",
+    "2025-11-25": "HTTPError: HTTP Error 503: Service Unavailable",
+    "2025-10-24": "HTTPError: HTTP Error 503: Service Unavailable"
   },
   "retry": {
     "2026-01-30": {
       "last_error": "TimeoutError: The read operation timed out",
-      "last_attempt": "2026-11-02T08:24:46.695364+00:00"
+      "last_attempt": "2026-11-02T18:45:05.524586+00:00"
+    },
+    "2026-01-14": {
+      "last_error": "TimeoutError: The read operation timed out",
+      "last_attempt": "2026-11-02T18:45:05.524586+00:00"
+    },
+    "2026-01-13": {
+      "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "last_attempt": "2026-11-02T18:45:05.524586+00:00"
+    },
+    "2025-12-18": {
+      "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "last_attempt": "2026-11-02T18:45:05.524586+00:00"
+    },
+    "2025-11-25": {
+      "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "last_attempt": "2026-11-02T18:45:05.524586+00:00"
+    },
+    "2025-10-24": {
+      "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "last_attempt": "2026-11-02T18:45:05.524586+00:00"
     }
   }
 }
