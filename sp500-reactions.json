@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-02T18:45:05.524586+00:00",
+  "updated_at": "2026-11-03T01:19:26.629339+00:00",
   "market": "Dukascopy USA500.IDX/USD CFD index (not exchange futures or ^GSPC)",
   "method": "Dukascopy USA500 BID M1 OHLC; pre-release close to 1/5/15/30-minute highs and lows in index points; no tick-level ordering or causality inference",
   "eligible_count": 35,
-  "missing_count": 6,
+  "missing_count": 5,
   "missing_events": [
     {
       "url": "https://www.bls.gov/news.release/archives/ppi_01302026.htm",
@@ -24,11 +24,6 @@
       "url": "https://www.bls.gov/news.release/archives/cpi_12182025.htm",
       "category": "CPI",
       "release_time_utc": "2025-12-18T13:30:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/ppi_11252025.htm",
-      "category": "PPI",
-      "release_time_utc": "2025-11-25T13:30:00+00:00"
     },
     {
       "url": "https://www.bls.gov/news.release/archives/cpi_10242025.htm",
@@ -1139,40 +1134,74 @@
       "source": "Dukascopy USA500IDXUSD BID M1",
       "unit": "index points",
       "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/ppi_11252025.htm",
+      "category": "PPI",
+      "title": "PPI for final demand advances 0.3% in September; goods rise 0.9%, services unchanged",
+      "release_time_utc": "2025-11-25T13:30:00+00:00",
+      "baseline": 6709.051,
+      "spikes": {
+        "1": {
+          "up_points": 4.003,
+          "down_points": 0,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 4.003,
+          "down_points": 5.606,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 4.003,
+          "down_points": 10.618,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 4.003,
+          "down_points": 10.618,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 2.0,
+        "5": -5.097,
+        "15": -10.112,
+        "30": -7.618
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
     }
   ],
   "checks": {
-    "2026-01-30": "TimeoutError: The read operation timed out",
-    "2026-01-14": "TimeoutError: The read operation timed out",
+    "2026-01-30": "HTTPError: HTTP Error 503: Service Unavailable",
+    "2026-01-14": "HTTPError: HTTP Error 503: Service Unavailable",
     "2026-01-13": "HTTPError: HTTP Error 503: Service Unavailable",
     "2025-12-18": "HTTPError: HTTP Error 503: Service Unavailable",
-    "2025-11-25": "HTTPError: HTTP Error 503: Service Unavailable",
+    "2025-11-25": "bars=1440, matched=1",
     "2025-10-24": "HTTPError: HTTP Error 503: Service Unavailable"
   },
   "retry": {
     "2026-01-30": {
-      "last_error": "TimeoutError: The read operation timed out",
-      "last_attempt": "2026-11-02T18:45:05.524586+00:00"
+      "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "last_attempt": "2026-11-03T01:19:26.629339+00:00"
     },
     "2026-01-14": {
-      "last_error": "TimeoutError: The read operation timed out",
-      "last_attempt": "2026-11-02T18:45:05.524586+00:00"
+      "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "last_attempt": "2026-11-03T01:19:26.629339+00:00"
     },
     "2026-01-13": {
       "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
-      "last_attempt": "2026-11-02T18:45:05.524586+00:00"
+      "last_attempt": "2026-11-03T01:19:26.629339+00:00"
     },
     "2025-12-18": {
       "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
-      "last_attempt": "2026-11-02T18:45:05.524586+00:00"
-    },
-    "2025-11-25": {
-      "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
-      "last_attempt": "2026-11-02T18:45:05.524586+00:00"
+      "last_attempt": "2026-11-03T01:19:26.629339+00:00"
     },
     "2025-10-24": {
       "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
-      "last_attempt": "2026-11-02T18:45:05.524586+00:00"
+      "last_attempt": "2026-11-03T01:19:26.629339+00:00"
     }
   }
 }
