@@ -1,29 +1,14 @@
 {
-  "updated_at": "2026-11-04T01:41:37.934148+00:00",
+  "updated_at": "2026-11-04T08:04:49.386747+00:00",
   "market": "Dukascopy USA500.IDX/USD CFD index (not exchange futures or ^GSPC)",
   "method": "Dukascopy USA500 BID M1 OHLC; pre-release close to 1/5/15/30-minute highs and lows in index points; no tick-level ordering or causality inference",
   "eligible_count": 35,
-  "missing_count": 4,
+  "missing_count": 1,
   "missing_events": [
     {
       "url": "https://www.bls.gov/news.release/archives/ppi_01142026.htm",
       "category": "PPI",
       "release_time_utc": "2026-01-14T13:30:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/cpi_01132026.htm",
-      "category": "CPI",
-      "release_time_utc": "2026-01-13T13:30:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/cpi_12182025.htm",
-      "category": "CPI",
-      "release_time_utc": "2025-12-18T13:30:00+00:00"
-    },
-    {
-      "url": "https://www.bls.gov/news.release/archives/cpi_10242025.htm",
-      "category": "CPI",
-      "release_time_utc": "2025-10-24T12:30:00+00:00"
     }
   ],
   "complete": false,
@@ -1169,6 +1154,82 @@
       "method_version": 2
     },
     {
+      "url": "https://www.bls.gov/news.release/archives/cpi_01132026.htm",
+      "category": "CPI",
+      "title": "CPI for all items rises 0.3% in December; shelter and food up",
+      "release_time_utc": "2026-01-13T13:30:00+00:00",
+      "baseline": 6969.233,
+      "spikes": {
+        "1": {
+          "up_points": 23.306,
+          "down_points": 0,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 28.521,
+          "down_points": 0,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 28.521,
+          "down_points": 0,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 28.521,
+          "down_points": 0,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 22.709,
+        "5": 23.006,
+        "15": 16.066,
+        "30": 12.366
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_12182025.htm",
+      "category": "CPI",
+      "title": "CPI for all items rises 2.7% over 12 months ending in November; shelter up",
+      "release_time_utc": "2025-12-18T13:30:00+00:00",
+      "baseline": 6754.899,
+      "spikes": {
+        "1": {
+          "up_points": 19.155,
+          "down_points": 0,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 19.155,
+          "down_points": 0,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 26.655,
+          "down_points": 0,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 28.334,
+          "down_points": 0,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 11.552,
+        "5": 11.146,
+        "15": 25.649,
+        "30": 20.149
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
       "url": "https://www.bls.gov/news.release/archives/ppi_11252025.htm",
       "category": "PPI",
       "title": "PPI for final demand advances 0.3% in September; goods rise 0.9%, services unchanged",
@@ -1205,30 +1266,56 @@
       "source": "Dukascopy USA500IDXUSD BID M1",
       "unit": "index points",
       "method_version": 2
+    },
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_10242025.htm",
+      "category": "CPI",
+      "title": "CPI for all items rises 0.3% in September; gasoline up",
+      "release_time_utc": "2025-10-24T12:30:00+00:00",
+      "baseline": 6760.354,
+      "spikes": {
+        "1": {
+          "up_points": 40.997,
+          "down_points": 1.315,
+          "first_minute_direction": "UP"
+        },
+        "5": {
+          "up_points": 40.997,
+          "down_points": 1.315,
+          "first_minute_direction": "UP"
+        },
+        "15": {
+          "up_points": 40.997,
+          "down_points": 1.315,
+          "first_minute_direction": "UP"
+        },
+        "30": {
+          "up_points": 40.997,
+          "down_points": 1.315,
+          "first_minute_direction": "UP"
+        }
+      },
+      "moves": {
+        "1": 31.588,
+        "5": 22.745,
+        "15": 18.979,
+        "30": 17.5
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
     }
   ],
   "checks": {
-    "2026-01-14": "TimeoutError: The read operation timed out",
-    "2026-01-13": "HTTPError: HTTP Error 503: Service Unavailable",
-    "2025-12-18": "HTTPError: HTTP Error 503: Service Unavailable",
-    "2025-10-24": "HTTPError: HTTP Error 503: Service Unavailable"
+    "2026-01-14": "URLError: <urlopen error timed out>",
+    "2026-01-13": "bars=1440, matched=1",
+    "2025-12-18": "bars=1440, matched=1",
+    "2025-10-24": "bars=1440, matched=1"
   },
   "retry": {
     "2026-01-14": {
-      "last_error": "TimeoutError: The read operation timed out",
-      "last_attempt": "2026-11-04T01:41:37.934148+00:00"
-    },
-    "2026-01-13": {
-      "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
-      "last_attempt": "2026-11-04T01:41:37.934148+00:00"
-    },
-    "2025-12-18": {
-      "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
-      "last_attempt": "2026-11-04T01:41:37.934148+00:00"
-    },
-    "2025-10-24": {
-      "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
-      "last_attempt": "2026-11-04T01:41:37.934148+00:00"
+      "last_error": "URLError: <urlopen error timed out>",
+      "last_attempt": "2026-11-04T08:04:49.386747+00:00"
     }
   }
 }
