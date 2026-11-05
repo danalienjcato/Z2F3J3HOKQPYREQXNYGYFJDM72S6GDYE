@@ -1,17 +1,11 @@
 {
-  "updated_at": "2026-11-04T21:55:07.484057+00:00",
+  "updated_at": "2026-11-05T02:08:42.370376+00:00",
   "market": "Dukascopy USA500.IDX/USD CFD index (not exchange futures or ^GSPC)",
   "method": "Dukascopy USA500 BID M1 OHLC; pre-release close to 1/5/15/30-minute highs and lows in index points; no tick-level ordering or causality inference",
   "eligible_count": 35,
-  "missing_count": 1,
-  "missing_events": [
-    {
-      "url": "https://www.bls.gov/news.release/archives/ppi_01142026.htm",
-      "category": "PPI",
-      "release_time_utc": "2026-01-14T13:30:00+00:00"
-    }
-  ],
-  "complete": false,
+  "missing_count": 0,
+  "missing_events": [],
+  "complete": true,
   "items": [
     {
       "url": "https://www.bea.gov/data/gdp/gross-domestic-product#2026-10-29",
@@ -1154,6 +1148,44 @@
       "method_version": 2
     },
     {
+      "url": "https://www.bls.gov/news.release/archives/ppi_01142026.htm",
+      "category": "PPI",
+      "title": "PPI for final demand advances 0.2% in November; goods rise 0.9%, services unchanged",
+      "release_time_utc": "2026-01-14T13:30:00+00:00",
+      "baseline": 6939.742,
+      "spikes": {
+        "1": {
+          "up_points": 1.512,
+          "down_points": 4.397,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_points": 1.512,
+          "down_points": 6.397,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_points": 1.512,
+          "down_points": 8.906,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_points": 1.512,
+          "down_points": 11.406,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "moves": {
+        "1": -3.843,
+        "5": -4.903,
+        "15": -8.906,
+        "30": -7.594
+      },
+      "source": "Dukascopy USA500IDXUSD BID M1",
+      "unit": "index points",
+      "method_version": 2
+    },
+    {
       "url": "https://www.bls.gov/news.release/archives/cpi_01132026.htm",
       "category": "CPI",
       "title": "CPI for all items rises 0.3% in December; shelter and food up",
@@ -1307,12 +1339,7 @@
     }
   ],
   "checks": {
-    "2026-01-14": "URLError: <urlopen error _ssl.c:994: The handshake operation timed out>"
+    "2026-01-14": "bars=1440, matched=1"
   },
-  "retry": {
-    "2026-01-14": {
-      "last_error": "URLError: <urlopen error _ssl.c:994: The handshake operation timed out>",
-      "last_attempt": "2026-11-04T21:55:07.484057+00:00"
-    }
-  }
+  "retry": {}
 }
