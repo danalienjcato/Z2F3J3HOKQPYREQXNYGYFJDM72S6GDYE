@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T08:36:34.395341+00:00",
+  "updated_at": "2026-11-07T15:05:05.052044+00:00",
   "market": "Dukascopy USA500.IDX/USD CFD index (not exchange futures or ^GSPC)",
   "method": "Dukascopy USA500 BID M1 OHLC; pre-release close to 1/5/15/30-minute highs and lows in index points; no tick-level ordering or causality inference",
   "eligible_count": 35,
