@@ -1,11 +1,17 @@
 {
-  "updated_at": "2026-11-10T11:49:19.305161+00:00",
+  "updated_at": "2026-11-10T18:54:22.602661+00:00",
   "market": "Dukascopy USA500.IDX/USD CFD index (not exchange futures or ^GSPC)",
   "method": "Dukascopy USA500 BID M1 OHLC; pre-release close to 1/5/15/30-minute highs and lows in index points; no tick-level ordering or causality inference",
-  "eligible_count": 35,
-  "missing_count": 0,
-  "missing_events": [],
-  "complete": true,
+  "eligible_count": 36,
+  "missing_count": 1,
+  "missing_events": [
+    {
+      "url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm",
+      "category": "CPI",
+      "release_time_utc": "2026-11-10T13:30:00+00:00"
+    }
+  ],
+  "complete": false,
   "items": [
     {
       "url": "https://www.bea.gov/data/gdp/gross-domestic-product#2026-10-29",
@@ -1338,6 +1344,13 @@
       "method_version": 2
     }
   ],
-  "checks": {},
-  "retry": {}
+  "checks": {
+    "2026-11-10": "URLError: <urlopen error _ssl.c:994: The handshake operation timed out>"
+  },
+  "retry": {
+    "2026-11-10": {
+      "last_error": "URLError: <urlopen error _ssl.c:994: The handshake operation timed out>",
+      "last_attempt": "2026-11-10T18:54:22.602661+00:00"
+    }
+  }
 }

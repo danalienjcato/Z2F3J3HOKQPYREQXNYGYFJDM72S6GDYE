@@ -1,23 +1,30 @@
 {
-  "updated_at": "2026-11-10T11:49:18.610149+00:00",
+  "updated_at": "2026-11-10T18:53:48.453964+00:00",
   "sources": {
     "FOMC": {
       "ok": true,
-      "checked_at": "2026-11-10T11:49:18.610149+00:00",
+      "checked_at": "2026-11-10T18:53:48.453964+00:00",
       "count": 15
     },
     "CPI": {
       "ok": true,
-      "checked_at": "2026-11-10T11:49:18.610149+00:00",
+      "checked_at": "2026-11-10T18:53:48.453964+00:00",
       "count": 12
     },
     "PPI": {
       "ok": true,
-      "checked_at": "2026-11-10T11:49:18.610149+00:00",
+      "checked_at": "2026-11-10T18:53:48.453964+00:00",
       "count": 12
     }
   },
   "items": [
+    {
+      "category": "CPI",
+      "title": "CPI for all items increases 0.4% in October; shelter rises",
+      "url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm",
+      "published": "2026-11-10T12:55:47.272000+00:00",
+      "summary": ""
+    },
     {
       "category": "GDP",
       "title": "US GDP Q3 advance estimate",
