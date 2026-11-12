@@ -1,23 +1,30 @@
 {
-  "updated_at": "2026-11-12T17:43:36.512605+00:00",
+  "updated_at": "2026-11-12T22:52:41.330154+00:00",
   "sources": {
     "FOMC": {
       "ok": true,
-      "checked_at": "2026-11-12T17:43:36.512605+00:00",
+      "checked_at": "2026-11-12T22:52:41.330154+00:00",
       "count": 15
     },
     "CPI": {
       "ok": true,
-      "checked_at": "2026-11-12T17:43:36.512605+00:00",
+      "checked_at": "2026-11-12T22:52:41.330154+00:00",
       "count": 12
     },
     "PPI": {
       "ok": true,
-      "checked_at": "2026-11-12T17:43:36.512605+00:00",
+      "checked_at": "2026-11-12T22:52:41.330154+00:00",
       "count": 12
     }
   },
   "items": [
+    {
+      "category": "FOMC",
+      "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm",
+      "published": "2026-11-12T17:45:00+00:00",
+      "summary": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027"
+    },
     {
       "category": "CPI",
       "title": "CPI for all items increases 0.4% in October; shelter rises",
