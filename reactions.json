@@ -1,18 +1,52 @@
 {
-  "updated_at": "2026-11-11T20:06:11.155267+00:00",
+  "updated_at": "2026-11-12T01:52:49.825412+00:00",
   "eligible_count": 36,
-  "missing_count": 1,
-  "missing_events": [
+  "missing_count": 0,
+  "missing_events": [],
+  "complete": true,
+  "method": "XAUUSD BID M1 OHLC. Spike extrema measured from pre-release minute close to maximum high/minimum low during first 1, 5, 15 and 30 minutes. First-minute direction uses first minute close. No tick-level first move or causality claim.",
+  "items": [
     {
       "url": "https://www.bls.gov/news.release/archives/cpi_11102026.htm",
       "category": "CPI",
       "title": "CPI for all items increases 0.4% in October; shelter rises",
-      "release_time_utc": "2026-11-10T13:30:00+00:00"
-    }
-  ],
-  "complete": false,
-  "method": "XAUUSD BID M1 OHLC. Spike extrema measured from pre-release minute close to maximum high/minimum low during first 1, 5, 15 and 30 minutes. First-minute direction uses first minute close. No tick-level first move or causality claim.",
-  "items": [
+      "published": "2026-11-10T12:55:47.272000+00:00",
+      "release_time_utc": "2026-11-10T13:30:00+00:00",
+      "baseline": 4071.335,
+      "moves": {
+        "1": -20.64,
+        "5": -27.508,
+        "15": -15.02,
+        "30": -19.457,
+        "60": -19.311
+      },
+      "spikes": {
+        "1": {
+          "up_usd": 3.891,
+          "down_usd": 31.438,
+          "first_minute_direction": "DOWN"
+        },
+        "5": {
+          "up_usd": 3.891,
+          "down_usd": 31.438,
+          "first_minute_direction": "DOWN"
+        },
+        "15": {
+          "up_usd": 3.891,
+          "down_usd": 31.438,
+          "first_minute_direction": "DOWN"
+        },
+        "30": {
+          "up_usd": 3.891,
+          "down_usd": 31.438,
+          "first_minute_direction": "DOWN"
+        }
+      },
+      "source": "Dukascopy XAUUSD BID M1",
+      "timing_source": "Scheduled 08:30 ET BLS release or 14:00 ET FOMC release",
+      "method_version": 3,
+      "unit": "USD/oz"
+    },
     {
       "url": "https://www.bea.gov/data/gdp/gross-domestic-product#2026-10-29",
       "category": "GDP",
@@ -1483,14 +1517,8 @@
     "2026-10-07": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2026-09-16": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1380, events=1, matched=1",
     "2026-09-11": "source=HistData XAUUSD BID M1 (fixed EST UTC-5), candles=1320, events=1, matched=1",
-    "2026-11-10": "RuntimeError: Dukascopy: HTTP Error 503: Service Unavailable; HistData: HistData lacks usable XAUUSD UTC bars for 2026-11-10"
+    "2026-11-10": "source=Dukascopy XAUUSD BID M1, candles=1440, events=1, matched=1"
   },
-  "retry": {
-    "2026-11-10": {
-      "failures": 5,
-      "last_error": "RuntimeError: Dukascopy: HTTP Error 503: Service Unavailable; HistData: HistData lacks usable XAUUSD UTC bars for 2026-11-10",
-      "next_attempt": "2026-11-12T00:06:11.155267+00:00"
-    }
-  },
+  "retry": {},
   "backup_configured": false
 }
