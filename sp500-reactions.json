@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T18:34:07.302157+00:00",
+  "updated_at": "2026-11-13T23:49:41.516940+00:00",
   "market": "Dukascopy USA500.IDX/USD CFD index (not exchange futures or ^GSPC)",
   "method": "Dukascopy USA500 BID M1 OHLC; pre-release close to 1/5/15/30-minute highs and lows in index points; no tick-level ordering or causality inference",
   "eligible_count": 37,
@@ -1388,7 +1388,7 @@
   "retry": {
     "2026-11-13": {
       "last_error": "HTTPError: HTTP Error 503: Service Unavailable",
-      "last_attempt": "2026-11-13T18:34:07.302157+00:00"
+      "last_attempt": "2026-11-13T23:49:41.516940+00:00"
     }
   }
 }

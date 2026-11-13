@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T18:33:31.611093+00:00",
+  "updated_at": "2026-11-13T23:49:04.643152+00:00",
   "eligible_count": 37,
   "missing_count": 1,
   "missing_events": [
@@ -1529,9 +1529,9 @@
   },
   "retry": {
     "2026-11-13": {
-      "failures": 1,
+      "failures": 2,
       "last_error": "RuntimeError: Dukascopy: The read operation timed out; HistData: HistData lacks usable XAUUSD UTC bars for 2026-11-13",
-      "next_attempt": "2026-11-13T18:48:31.611093+00:00"
+      "next_attempt": "2026-11-14T00:19:04.643152+00:00"
     }
   },
   "backup_configured": false
