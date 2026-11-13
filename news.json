@@ -1,23 +1,30 @@
 {
-  "updated_at": "2026-11-13T11:12:51.062671+00:00",
+  "updated_at": "2026-11-13T18:33:31.328741+00:00",
   "sources": {
     "FOMC": {
       "ok": true,
-      "checked_at": "2026-11-13T11:12:51.062671+00:00",
+      "checked_at": "2026-11-13T18:33:31.328741+00:00",
       "count": 15
     },
     "CPI": {
       "ok": true,
-      "checked_at": "2026-11-13T11:12:51.062671+00:00",
+      "checked_at": "2026-11-13T18:33:31.328741+00:00",
       "count": 12
     },
     "PPI": {
       "ok": true,
-      "checked_at": "2026-11-13T11:12:51.062671+00:00",
+      "checked_at": "2026-11-13T18:33:31.328741+00:00",
       "count": 12
     }
   },
   "items": [
+    {
+      "category": "PPI",
+      "title": "PPI for final demand increases 0.3% in October; goods advance 0.5%, services rise 0.2%",
+      "url": "https://www.bls.gov/news.release/archives/ppi_11132026.htm",
+      "published": "2026-11-13T12:50:34.956000+00:00",
+      "summary": ""
+    },
     {
       "category": "FOMC",
       "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
