@@ -1,23 +1,30 @@
 {
-  "updated_at": "2026-11-18T12:20:15.197341+00:00",
+  "updated_at": "2026-11-18T20:41:05.456650+00:00",
   "sources": {
     "FOMC": {
       "ok": true,
-      "checked_at": "2026-11-18T12:20:15.197341+00:00",
+      "checked_at": "2026-11-18T20:41:05.456650+00:00",
       "count": 15
     },
     "CPI": {
       "ok": true,
-      "checked_at": "2026-11-18T12:20:15.197341+00:00",
+      "checked_at": "2026-11-18T20:41:05.456650+00:00",
       "count": 12
     },
     "PPI": {
       "ok": true,
-      "checked_at": "2026-11-18T12:20:15.197341+00:00",
+      "checked_at": "2026-11-18T20:41:05.456650+00:00",
       "count": 12
     }
   },
   "items": [
+    {
+      "category": "FOMC",
+      "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm",
+      "published": "2026-11-18T19:00:00+00:00",
+      "summary": "Minutes of the Federal Open Market Committee, October 27-28, 2026"
+    },
     {
       "category": "PPI",
       "title": "PPI for final demand increases 0.3% in October; goods advance 0.5%, services rise 0.2%",
